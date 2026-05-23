@@ -72,6 +72,35 @@ for shape in slide.shapes:
                 print(cell.text.strip())
 ```
 
+## 关键注意事项
+
+### 标题居中
+所有section标题必须加 `center` 类：
+```liquid
+<h2 class="section-title center">标题</h2>
+<p class="section-desc center">描述</p>
+```
+
+### 图片文件名
+**不要使用中文字符**，Shopify的asset_url可能解析失败：
+```liquid
+<!-- ❌ 错误 -->
+<img src="{{ 'slide10_gift_起泡网.png' | asset_url }}">
+<!-- ✅ 正确 -->
+<img src="{{ 'slide10_gift_bubble_net.png' | asset_url }}">
+```
+
+### 内联style
+不要在section文件中写内联 `<style>` 块，所有样式统一放在 `assets/style.css`。
+
+检查命令：
+```bash
+for f in sections/*.liquid; do
+  has=$(grep -c "<style>" "$f" 2>/dev/null)
+  if [ "$has" -gt 0 ]; then echo "含内联style: $f"; fi
+done
+```
+
 ## 图片提取方法
 
 ```python

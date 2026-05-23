@@ -384,3 +384,114 @@ miao/
 ---
 
 > 本 skill 基于苗本芳养发皂项目实践总结，适用于Shopify主题网站的UI优化与自动化部署。
+
+---
+
+## 7. 常见排版问题与修复
+
+### 问题1：内联style覆盖全局样式
+
+**症状：** section内的样式与全局style.css冲突，导致排版错乱（标题不居中、颜色不对等）。
+
+**原因：** Liquid section文件中含有独立的 `<style>` 标签，优先级高于全局style.css。
+
+**修复：** 移除section内的内联style，所有样式统一放在 `assets/style.css` 中管理。
+
+```liquid
+<!-- ❌ 错误：section内嵌style -->
+<section class="ingredients" id="ingredients">
+  ...
+</section>
+<style>
+  .ingredients { padding: 80px 0; background: #f8f9f0; }  /* 和全局冲突！ */
+</style>
+
+<!-- ✅ 正确：只保留HTML结构，样式统一在style.css -->
+<section class="ingredients" id="ingredients">
+  ...
+</section>
+<!-- 无内联style -->
+```
+
+### 问题2：标题缺少 center 类
+
+**症状：** section标题（section-title）没有居中显示。
+
+**原因：** style.css中 `.section-title` 默认左对齐，需要添加 `.center` 类才居中：
+
+```css
+.section-title.center { text-align: center; }
+```
+
+**修复：** 在需要居中的标题上加 `center` 类。
+
+```liquid
+<!-- ❌ 错误 -->
+<h2 class="section-title">18味草本配伍</h2>
+
+<!-- ✅ 正确 -->
+<h2 class="section-title center">18味草本配伍</h2>
+```
+
+### 问题3：图片文件名为中文导致加载失败
+
+**症状：** 图片在Shopify页面上不显示。
+
+**原因：** Shopify的 `asset_url` 过滤器对中文字符的文件名解析不稳定。
+
+**修复：** 图片文件全部使用英文字母命名，不用中文。
+
+```liquid
+<!-- ❌ 错误 -->
+<img src="{{ 'slide10_gift_起泡网.png' | asset_url }}">
+
+<!-- ✅ 正确 -->
+<img src="{{ 'slide10_gift_bubble_net.png' | asset_url }}">
+```
+
+### 问题4：内联style未随全局更新同步
+
+**症状：** 修改了style.css但某些section外观没变。
+
+**原因：** 这些section有自己的 `<style>` 块，不继承全局样式更新。
+
+**修复建议：**
+1. 将所有样式统一迁移到 `assets/style.css`
+2. 删除所有section文件中的 `<style>...</style>` 块
+3. 提交前用以下命令检查残留内联style：
+
+```bash
+for f in sections/*.liquid; do
+  has=$(grep -c "<style>" "$f" 2>/dev/null)
+  if [ "$has" -gt 0 ]; then
+    echo "含内联style: $f"
+  fi
+done
+```
+
+### 问题5：响应式布局断点未覆盖
+
+**症状：** 在手机或平板上排版混乱。
+
+**修复：** 确保style.css中覆盖了以下断点：
+
+```css
+@media (max-width: 1024px) { /* 小平板 */ }
+@media (max-width: 768px) { /* 手机横屏 */ }
+@media (max-width: 480px) { /* 手机竖屏 */ }
+```
+
+Grid布局要设置合适的 `grid-template-columns` 变化。
+
+---
+
+## 8. 本地检查清单
+
+推送前逐一检查：
+
+- [ ] 所有section文件无内联 `<style>` 块
+- [ ] 居中标题加了 `center` 类
+- [ ] 居中描述加了 `center` 类
+- [ ] 图片文件名为英文，无中文字符
+- [ ] 确保 `style.css` 和 `main.js` 已更新
+- [ ] 执行 `git add -A && git commit && git push`
