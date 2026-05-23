@@ -8,23 +8,10 @@
       <!-- 养发根基 -->
       <div class="herb-category">
         <h3 class="category-title">🌱 养发根基</h3>
-        <div class="herb-items">
-          <div class="herb-item">
-            <div class="herb-img"><img src="{{ 'slide4_img11_14.png' | asset_url }}" alt="何首乌"></div>
-            <h4>何首乌</h4>
-          </div>
-          <div class="herb-item">
-            <div class="herb-img"><img src="{{ 'slide4_img12_15.png' | asset_url }}" alt="桑葚"></div>
-            <h4>桑葚</h4>
-          </div>
-          <div class="herb-item">
-            <div class="herb-img"><img src="{{ 'slide4_img13_16.png' | asset_url }}" alt="墨旱莲"></div>
-            <h4>墨旱莲</h4>
-          </div>
-          <div class="herb-item">
-            <div class="herb-img"><img src="{{ 'slide4_img14_17.png' | asset_url }}" alt="侧柏叶"></div>
-            <h4>侧柏叶</h4>
-          </div>
+        <div class="herb-tags">
+          <span class="herb-tag">何首乌</span>
+          <span class="herb-tag">桑葚</span>
+          <span class="herb-tag">墨旱莲</span>
         </div>
       </div>
 
@@ -93,15 +80,6 @@
   padding-bottom: 12px;
   border-bottom: 2px solid #e8f0e0;
 }
-.herb-items {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-.herb-item { text-align: center; }
-.herb-img { margin-bottom: 8px; }
-.herb-img img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
-.herb-item h4 { font-size: 15px; color: #2d4a2a; margin: 0; }
 .herb-tags {
   display: flex;
   flex-wrap: wrap;
