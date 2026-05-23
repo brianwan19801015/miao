@@ -20,4 +20,4 @@ jobs:
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
           SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_STORE }}
           SHOPIFY_FLAG_FORCE: '1'
-        run: shopify theme push --path=.
+        run: shopify theme push --path=. --theme="miaobenfang"
