@@ -1,6 +1,7 @@
 <section class="gifts" id="gifts">
   <div class="container">
-    <h2 class="section-title">买就送，赠品价值超百元！</h2>
+    <h2 class="section-title center" style="color:#fff;">买就送，赠品价值超百元！</h2>
+    <p class="section-desc center" style="color:rgba(255,255,255,0.8);">限时活动，下单即享多重赠品</p>
     
     <div class="gift-grid">
       <!-- 起泡网（每盒） -->
@@ -32,73 +33,6 @@
     </div>
   </div>
 </section>
-
-<style>
-.gifts { padding: 80px 0; background: linear-gradient(135deg, #2d4a2a 0%, #4a7c3f 50%, #2d4a2a 100%); }
-.gifts .section-title { color: #fff; text-align: center; margin-bottom: 48px; }
-
-.gift-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.gift-card {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 32px 24px;
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.gift-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
-}
-
-.gift-img { margin-bottom: 20px; }
-.gift-img img {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-  border: 3px solid rgba(255,255,255,0.2);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-.gift-name {
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 6px;
-}
-.gift-condition {
-  font-size: 14px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.7);
-  display: block;
-  margin-top: 2px;
-}
-
-.gift-desc {
-  font-size: 14px;
-  color: rgba(255,255,255,0.85);
-  line-height: 1.7;
-  margin-top: 12px;
-}
-
-@media (max-width: 768px) {
-  .gift-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
-</style>
 
 {% schema %}
 {

@@ -1,8 +1,7 @@
 <section class="ingredients" id="ingredients">
   <div class="container">
-    <h2 class="section-title">18味草本配伍，回归温和净养</h2>
-    <p class="section-desc">源自《苗族医药学》18味苗家古方 · 科学配伍</p>
-    <p class="section-subdesc">精选草本协同调理，兼顾清洁力与头皮舒适度。</p>
+    <h2 class="section-title center">18味草本配伍，回归温和净养</h2>
+    <p class="section-desc center">源自《苗族医药学》18味苗家古方 · 科学配伍</p>
     
     <div class="herb-categories">
       <!-- 养发根基 -->
@@ -57,59 +56,5 @@
     </div>
   </div>
 </section>
-
-<style>
-.ingredients { padding: 80px 0; background: #f8f9f0; }
-.section-subdesc { text-align: center; color: #888; font-size: 14px; margin-top: -10px; margin-bottom: 40px; }
-
-.herb-categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-}
-.herb-category {
-  background: white;
-  border-radius: 20px;
-  padding: 28px 24px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  transition: transform 0.3s;
-}
-.herb-category:hover { transform: translateY(-4px); }
-.category-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: #4a7c3f;
-  text-align: center;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid #e8f0e0;
-}
-.herb-img {
-  text-align: center;
-  margin-bottom: 16px;
-}
-.herb-img img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-}
-.herb-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-.herb-tag {
-  background: #f0f5eb;
-  color: #4a7c3f;
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
-}
-</style>
 
 {% schema %}{"name":"Ingredients","settings":[],"presets":[{"name":"Ingredients"}]}{% endschema %}
