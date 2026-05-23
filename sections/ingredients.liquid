@@ -1,7 +1,10 @@
 <section class="ingredients" id="ingredients">
   <div class="container">
     <h2 class="section-title">18味草本配伍，回归温和净养</h2>
-    <p class="section-desc">精选草本协同调理，兼顾清洁力与头皮舒适度。</p>
+    <p class="section-desc">源自《苗族医药学》18味苗家古方 · 科学配伍</p>
+    <p class="section-subdesc">精选草本协同调理，兼顾清洁力与头皮舒适度。</p>
+    
+    <h3 class="foundation-title">🌱 养发根基</h3>
     <div class="ingredient-grid">
       <div class="ingredient-card">
         <div class="ingredient-img"><img src="{{ 'slide4_img11_14.png' | asset_url }}" alt="何首乌"></div>
@@ -9,8 +12,8 @@
         <p>滋养发根，改善干枯脆弱。</p>
       </div>
       <div class="ingredient-card">
-        <div class="ingredient-img"><img src="{{ 'slide4_img12_15.png' | asset_url }}" alt="桑叶"></div>
-        <h3>桑叶</h3>
+        <div class="ingredient-img"><img src="{{ 'slide4_img12_15.png' | asset_url }}" alt="桑葚"></div>
+        <h3>桑葚</h3>
         <p>帮助平衡头皮环境。</p>
       </div>
       <div class="ingredient-card">
@@ -26,4 +29,38 @@
     </div>
   </div>
 </section>
+
+<style>
+.ingredients { padding: 80px 0; background: #f8f9f0; }
+.section-subdesc { text-align: center; color: #888; font-size: 14px; margin-top: -10px; margin-bottom: 32px; }
+.foundation-title {
+  text-align: center;
+  font-size: 22px;
+  color: #4a7c3f;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #4a7c3f;
+  display: inline-block;
+  width: 100%;
+}
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+}
+.ingredient-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+.ingredient-card:hover { transform: translateY(-4px); }
+.ingredient-img { margin-bottom: 16px; }
+.ingredient-img img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; }
+.ingredient-card h3 { font-size: 18px; color: #2d4a2a; margin-bottom: 8px; }
+.ingredient-card p { font-size: 14px; color: #666; line-height: 1.6; }
+</style>
+
 {% schema %}{"name":"Ingredients","settings":[],"presets":[{"name":"Ingredients"}]}{% endschema %}
