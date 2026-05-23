@@ -19,8 +19,8 @@ jobs:
 
       - name: Push theme to Shopify
         env:
+          SHOPIFY_APP_AUTOMATION_TOKEN: ${{ secrets.SHOPIFY_APP_AUTOMATION_TOKEN }}
           SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_STORE }}
-          SHOPIFY_FLAG_PASSWORD: ${{ secrets.SHOPIFY_PASSWORD }}
         run: |
           shopify theme push \
             --path=. \
