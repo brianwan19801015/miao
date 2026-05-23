@@ -13,14 +13,11 @@ jobs:
           node-version: 20
 
       - name: Install Shopify CLI
-        run: npm install -g @shopify/cli
+        run: npm install -g @shopify/cli @shopify/theme
 
       - name: Upload theme
         env:
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
           SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_STORE }}
-        run: |
-          shopify theme push \
-            --json \
-            --store=$SHOPIFY_FLAG_STORE \
-            --password=$SHOPIFY_CLI_THEME_TOKEN
+          SHOPIFY_FLAG_FORCE: '1'
+        run: shopify theme push --path=.
