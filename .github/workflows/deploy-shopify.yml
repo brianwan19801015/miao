@@ -19,9 +19,8 @@ jobs:
 
       - name: Push theme to Shopify
         env:
-          SHOPIFY_CLI_TOKEN: ${{ secrets.SHOPIFY_CLI_TOKEN }}
-          SHOPIFY_CLI_CLIENT_ID: ${{ secrets.SHOPIFY_CLI_CLIENT_ID }}
           SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_STORE }}
+          SHOPIFY_FLAG_PASSWORD: ${{ secrets.SHOPIFY_PASSWORD }}
         run: |
           shopify theme push \
             --path=. \
