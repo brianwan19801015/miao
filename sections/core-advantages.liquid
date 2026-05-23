@@ -1,0 +1,75 @@
+<section class="core-advantages" id="core-advantages">
+  <div class="container">
+    <h2 class="section-title">三大核心优势，重新定义头皮清洁</h2>
+    <div class="advantages-grid">
+      <div class="advantage-card">
+        <div class="advantage-img">
+          <img src="{{ 'slide7_img0_27.png' | asset_url }}" alt="草本植萃">
+        </div>
+        <h3>草本植萃 · 温和净养</h3>
+        <p>甄选十余种天然草本植萃，源自苗家古方智慧，清洁的同时养护头皮生态。</p>
+      </div>
+      <div class="advantage-card">
+        <div class="advantage-img">
+          <img src="{{ 'slide8_img0_28.png' | asset_url }}" alt="45天冷制">
+        </div>
+        <h3>45天冷制 · 锁住活性</h3>
+        <p>低温冷制工艺，<40℃恒温入模，最大程度保留草本活性成分不流失。</p>
+      </div>
+      <div class="advantage-card">
+        <div class="advantage-img">
+          <img src="{{ 'slide9_img0_29.png' | asset_url }}" alt="0添加">
+        </div>
+        <h3>5大0添加 · 纯净安心</h3>
+        <p>0硅油、0月桂醇、0防腐剂、0硫酸盐、0人工香精，敏感头皮也能放心使用。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.core-advantages {
+  padding: 80px 0;
+  background: #fff;
+}
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+.advantage-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+  background: #fff;
+}
+.advantage-card:hover { transform: translateY(-4px); }
+.advantage-img img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+.advantage-card h3 {
+  font-size: 20px;
+  color: #2d4a2a;
+  padding: 20px 20px 0;
+  margin-bottom: 8px;
+}
+.advantage-card p {
+  font-size: 14px;
+  color: #666;
+  padding: 0 20px 24px;
+  line-height: 1.6;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Core Advantages",
+  "settings": [],
+  "presets": [{ "name": "Core Advantages" }]
+}
+{% endschema %}

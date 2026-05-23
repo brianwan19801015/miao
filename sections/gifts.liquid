@@ -1,0 +1,94 @@
+<section class="gifts" id="gifts">
+  <div class="container">
+    <h2 class="section-title">新人专属超值福利</h2>
+    <p class="section-desc">限时活动价格美丽，下单即享多重赠品</p>
+    <div class="gifts-showcase">
+      <div class="gifts-image">
+        <img src="{{ 'slide10_img0_33.png' | asset_url }}" alt="苗本芳养发皂赠品">
+      </div>
+      <div class="gifts-content">
+        <div class="gift-badge">买就送</div>
+        <h3>赠品价值超百元！</h3>
+        <ul class="gift-list">
+          <li><i class="fas fa-gift"></i> 草本养发体验装</li>
+          <li><i class="fas fa-gift"></i> 配套起泡网</li>
+          <li><i class="fas fa-gift"></i> 使用指南手册</li>
+        </ul>
+        <p class="gifts-cta">立即咨询，获取专属优惠</p>
+        <a href="#contact" class="btn btn-primary">立即咨询</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.gifts {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #fff8e8 0%, #fef3d9 100%);
+}
+.gifts-showcase {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  margin-top: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gifts-image {
+  flex: 1;
+}
+.gifts-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+.gifts-content {
+  flex: 1;
+}
+.gift-badge {
+  display: inline-block;
+  background: #e85d3a;
+  color: white;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.gifts-content h3 {
+  font-size: 28px;
+  color: #2d4a2a;
+  margin-bottom: 16px;
+}
+.gift-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+.gift-list li {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #444;
+}
+.gift-list li i {
+  color: #e85d3a;
+  margin-right: 12px;
+}
+.gifts-cta {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 16px;
+}
+@media (max-width: 768px) {
+  .gifts-showcase { flex-direction: column; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Gifts",
+  "settings": [],
+  "presets": [{ "name": "Gifts" }]
+}
+{% endschema %}

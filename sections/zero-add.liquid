@@ -1,0 +1,72 @@
+<section class="zero-add" id="zero-add">
+  <div class="container">
+    <h2 class="section-title">5大0添加，给头皮最纯净的呵护</h2>
+    <div class="zero-grid">
+      <div class="zero-card">
+        <div class="zero-icon"><i class="fas fa-ban"></i></div>
+        <h3>0硅油</h3>
+        <p>告别发丝假滑感，让头皮毛囊自由呼吸，回归自然状态。</p>
+      </div>
+      <div class="zero-card">
+        <div class="zero-icon"><i class="fas fa-leaf"></i></div>
+        <h3>0月桂醇</h3>
+        <p>避免过度清洁破坏皮脂膜，建立健康的头皮天然保护屏障。</p>
+      </div>
+      <div class="zero-card">
+        <div class="zero-icon"><i class="fas fa-flask"></i></div>
+        <h3>0防腐剂</h3>
+        <p>拒绝添加任何化学防腐剂，从源头降低致敏风险，使用更安心。</p>
+      </div>
+      <div class="zero-card">
+        <div class="zero-icon"><i class="fas fa-shield-virus"></i></div>
+        <h3>0硫酸盐</h3>
+        <p>摒弃强刺激清洁成分，配方温和亲肤，敏感肌也能放心用。</p>
+      </div>
+      <div class="zero-card">
+        <div class="zero-icon"><i class="fas fa-spray-can-sparkles"></i></div>
+        <h3>0人工香精</h3>
+        <p>只保留植物草本萃取的自然清香，无人工合成香料的刺鼻感。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.zero-add {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9f0 0%, #e8f0e0 100%);
+}
+.zero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.zero-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+.zero-card:hover { transform: translateY(-4px); }
+.zero-icon {
+  width: 64px; height: 64px;
+  margin: 0 auto 16px;
+  background: #4a7c3f;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 24px;
+}
+.zero-card h3 { font-size: 18px; margin-bottom: 12px; color: #2d4a2a; }
+.zero-card p { font-size: 14px; color: #666; line-height: 1.6; }
+</style>
+
+{% schema %}
+{
+  "name": "Zero Additives",
+  "settings": [],
+  "presets": [{ "name": "Zero Additives" }]
+}
+{% endschema %}

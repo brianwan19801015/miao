@@ -1,0 +1,62 @@
+<section class="massage-tips" id="massage-tips">
+  <div class="container">
+    <h2 class="section-title">正确按摩，效果加倍</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-number">01</div>
+        <h3>按需调整频率</h3>
+        <p>油性头皮可隔天使用一次，中性或干性头皮建议每周2-3次，维持头皮健康状态。</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-number">02</div>
+        <h3>强调指腹按摩</h3>
+        <p>用指腹进行打圈按摩，而不是用指甲用力抓挠，能有效避免损伤头皮屏障。</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-number">03</div>
+        <h3>保证充足时长</h3>
+        <p>每次按摩时间建议在3分钟以上，让产品有效成分充分渗透并被头皮吸收。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.massage-tips {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f0f5eb 0%, #e2ecd9 100%);
+}
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+.tip-card {
+  background: white;
+  border-radius: 16px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+.tip-card:hover { transform: translateY(-4px); }
+.tip-number {
+  width: 56px; height: 56px;
+  margin: 0 auto 16px;
+  background: #4a7c3f;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 22px; font-weight: 700;
+}
+.tip-card h3 { font-size: 18px; color: #2d4a2a; margin-bottom: 12px; }
+.tip-card p { font-size: 14px; color: #666; line-height: 1.7; }
+</style>
+
+{% schema %}
+{
+  "name": "Massage Tips",
+  "settings": [],
+  "presets": [{ "name": "Massage Tips" }]
+}
+{% endschema %}
