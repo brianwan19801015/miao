@@ -288,6 +288,13 @@ section { padding: 100px 0; position: relative; }
   color: rgba(255,255,255,0.9);
   margin: 0 0 8px;
 }
+.hero-slogan {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fef3c7;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
 .hero-sub {
   color: #fef3c7;
   font-weight: 600;
