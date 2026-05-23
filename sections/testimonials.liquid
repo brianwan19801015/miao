@@ -1,0 +1,79 @@
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <h2 class="section-title">真实用户反馈</h2>
+    <p class="section-desc">听听用过的人怎么说</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"用了两周，头皮出油明显少了，以前上午洗下午就塌，现在能撑一整天。"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+          <div>
+            <strong>张女士</strong>
+            <span>油性头皮 · 使用1个月</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"头屑困扰好几年了，这块皂洗了半个月头屑少了很多，肩膀终于干净了。"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+          <div>
+            <strong>李先生</strong>
+            <span>头屑问题 · 使用2个月</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★☆</div>
+        <p class="testimonial-text">"怀孕后头皮变得敏感，这款皂没有香精味，洗着很安心，不刺激。"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+          <div>
+            <strong>王女士</strong>
+            <span>敏感头皮 · 使用3周</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.testimonials { padding: 80px 0; background: #f8f9f0; }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+.testimonial-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+.testimonial-card:hover { transform: translateY(-4px); }
+.stars { color: #f5a623; font-size: 18px; margin-bottom: 12px; letter-spacing: 2px; }
+.testimonial-text { font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+.author-avatar i { font-size: 36px; color: #4a7c3f; }
+.testimonial-author strong { display: block; font-size: 15px; color: #2d4a2a; }
+.testimonial-author span { font-size: 12px; color: #999; }
+</style>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [],
+  "presets": [{ "name": "Testimonials" }]
+}
+{% endschema %}

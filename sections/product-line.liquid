@@ -1,16 +1,63 @@
-﻿<section class="product-line" id="product-line">
+<section class="product-line" id="product-line">
   <div class="container">
     <h2 class="section-title">产品系列</h2>
+    <p class="section-desc">从单品到组合，满足不同需求</p>
     <div class="product-gifts">
       <div class="gift-item">
         <img src="{{ 'slide10_img0_33.png' | asset_url }}" alt="苗本芳养发皂">
         <div class="gift-info">
-          <h3>苗本芳养发皂</h3>
+          <h3>苗本芳养发皂（单块装）</h3>
           <p>草本净养 · 45天低温冷制 · 日常可持续使用</p>
         </div>
       </div>
+      <div class="gift-item">
+        <div class="gift-info-only">
+          <h3>更多产品与组合</h3>
+          <p>联系我们了解：</p>
+          <ul>
+            <li>✅ 养发皂双块组合（更实惠）</li>
+            <li>✅ 养发皂+体验装礼盒</li>
+            <li>✅ 季度/半年护理套装</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="margin-top:12px;">咨询更多组合</a>
+        </div>
+      </div>
     </div>
-    <p class="product-note">更多规格与组合装可在咨询时获取。</p>
   </div>
 </section>
-{% schema %}{"name":"Product Line","settings":[],"presets":[{"name":"Product Line"}]}{% endschema %}
+
+<style>
+.product-line { padding: 80px 0; background: #fff; }
+.product-gifts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gift-item {
+  background: #f8f9f0;
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.gift-item:hover { transform: translateY(-4px); }
+.gift-item img { width: 100%; max-width: 280px; border-radius: 12px; margin-bottom: 16px; }
+.gift-info h3 { font-size: 18px; color: #2d4a2a; margin-bottom: 8px; }
+.gift-info p { font-size: 14px; color: #666; }
+.gift-info-only { padding: 20px 0; }
+.gift-info-only h3 { font-size: 18px; color: #2d4a2a; margin-bottom: 12px; }
+.gift-info-only ul { list-style: none; padding: 0; text-align: left; display: inline-block; }
+.gift-info-only li { padding: 8px 0; font-size: 14px; color: #555; }
+</style>
+
+{% schema %}
+{
+  "name": "Product Line",
+  "settings": [],
+  "presets": [{ "name": "Product Line" }]
+}
+{% endschema %}

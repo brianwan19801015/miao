@@ -1,21 +1,71 @@
-﻿<section class="contact" id="contact">
+<section class="contact" id="contact">
   <div class="container contact-wrap">
-    <div>
+    <div class="contact-info">
       <h2 class="section-title">咨询购买与合作</h2>
       <p class="section-desc">告诉我们你的头皮状态，我们给你匹配建议与使用方案。</p>
       <ul class="contact-list">
-        <li><i class="fas fa-phone"></i> 电话：400-000-0000</li>
-        <li><i class="fas fa-comment-dots"></i> 微信：miaobenfang</li>
-        <li><i class="fas fa-envelope"></i> 邮箱：service@miaobenfang.com</li>
+        <li><i class="fas fa-phone"></i> 电话：<span class="contact-val">400-000-0000</span></li>
+        <li><i class="fas fa-comment-dots"></i> 微信：<span class="contact-val">miaobenfang</span></li>
+        <li><i class="fas fa-envelope"></i> 邮箱：<span class="contact-val">service@miaobenfang.com</span></li>
       </ul>
     </div>
     <div class="contact-card">
       <h3>快速咨询</h3>
-      <p>建议在 Shopify 后台将这里替换为表单应用或客服组件。</p>
-      <a href="#top" class="btn btn-primary">返回顶部</a>
+      <p>留下联系方式，我们将在24小时内为您匹配专属头皮护理方案。</p>
+      <form class="contact-form" action="#" method="POST">
+        <input type="text" name="name" placeholder="您的姓名" required>
+        <input type="text" name="phone" placeholder="手机号/微信号" required>
+        <select name="concern">
+          <option value="">请选择您的头皮困扰</option>
+          <option value="oily">头皮易出油</option>
+          <option value="dandruff">头屑反复</option>
+          <option value="itchy">头皮发痒</option>
+          <option value="hairloss">掉发焦虑</option>
+          <option value="other">其他</option>
+        </select>
+        <button type="submit" class="btn btn-primary btn-block">提交咨询</button>
+      </form>
     </div>
   </div>
 </section>
+
+<style>
+.contact-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+.contact-info { flex: 1; }
+.contact-list { list-style: none; padding: 0; margin-top: 24px; }
+.contact-list li { padding: 12px 0; font-size: 16px; color: #555; }
+.contact-list li i { color: #4a7c3f; width: 28px; margin-right: 12px; }
+.contact-val { font-weight: 600; color: #2d4a2a; }
+.contact-card {
+  flex: 1;
+  background: white;
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+.contact-card h3 { font-size: 22px; color: #2d4a2a; margin-bottom: 8px; }
+.contact-card p { font-size: 14px; color: #888; margin-bottom: 20px; }
+.contact-form input,
+.contact-form select {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+.contact-form input:focus,
+.contact-form select:focus { border-color: #4a7c3f; }
+.btn-block { width: 100%; text-align: center; }
+@media (max-width: 768px) { .contact-wrap { flex-direction: column; } }
+</style>
 
 {% schema %}
 {
