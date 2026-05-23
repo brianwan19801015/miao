@@ -1,10 +1,20 @@
-<section class="gifts" id="gifts" style="background: url('{{ 'slide11_img0_34.png' | asset_url }}') center/cover no-repeat;">
+<section class="gifts" id="gifts" style="background: linear-gradient(135deg, #2d4a2a 0%, #4a7c3f 50%, #2d4a2a 100%);">
   <div class="container">
     <h2 class="section-title" style="color:#fff;">新人专属超值福利</h2>
     <p class="section-desc" style="color:rgba(255,255,255,0.9);">限时活动价格美丽，下单即享多重赠品</p>
     <div class="gifts-showcase">
       <div class="gifts-image">
         <img src="{{ 'slide10_img0_33.png' | asset_url }}" alt="苗本芳养发皂赠品">
+        <div class="gifts-icons">
+          <div class="gift-icon-item">
+            <img src="{{ 'slide11_img9_35.png' | asset_url }}" alt="草本植萃">
+            <span>草本植萃</span>
+          </div>
+          <div class="gift-icon-item">
+            <img src="{{ 'slide11_img10_36.png' | asset_url }}" alt="温和养护">
+            <span>温和养护</span>
+          </div>
+        </div>
       </div>
       <div class="gifts-content">
         <div class="gift-badge">买就送</div>
@@ -23,22 +33,37 @@
 
 <style>
 .gifts { padding: 100px 0; position: relative; }
-.gifts::before {
-  content: ''; position: absolute; inset: 0;
-  background: rgba(0,0,0,0.5); z-index: 1;
-}
-.gifts .container { position: relative; z-index: 2; }
+.gifts .container { position: relative; z-index: 1; }
 .gifts-showcase {
   display: flex;
   align-items: center;
   gap: 48px;
   margin-top: 40px;
-  max-width: 900px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
-.gifts-image { flex: 1; }
-.gifts-image img { width: 100%; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+.gifts-image { flex: 1; position: relative; }
+.gifts-image > img { width: 100%; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.3); display: block; }
+.gifts-icons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+}
+.gift-icon-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: 24px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+}
+.gift-icon-item img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
 .gifts-content { flex: 1; }
 .gift-badge {
   display: inline-block;
@@ -49,12 +74,20 @@
   font-size: 14px;
   font-weight: 700;
   margin-bottom: 16px;
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 .gift-list { list-style: none; padding: 0; margin-bottom: 24px; }
 .gift-list li { padding: 10px 0; font-size: 16px; color: rgba(255,255,255,0.9); }
 .gift-list li i { color: #e85d3a; margin-right: 12px; }
 .gifts-cta { font-size: 14px; margin-bottom: 16px; }
-@media (max-width: 768px) { .gifts-showcase { flex-direction: column; } }
+@media (max-width: 768px) { 
+  .gifts-showcase { flex-direction: column; } 
+  .gifts-icons { flex-wrap: wrap; }
+}
 </style>
 
 {% schema %}
