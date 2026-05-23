@@ -1,12 +1,122 @@
-﻿<section class="distributor" id="why-us">
+<section class="why-us" id="why-us">
   <div class="container">
-    <h2 class="section-title">为什么选择苗本芳</h2>
-    <div class="distributor-benefits">
-      <div class="benefit-card"><i class="fas fa-history"></i><h3>草本传承</h3><p>从苗家草本经验中提炼可落地的头皮方案。</p></div>
-      <div class="benefit-card"><i class="fas fa-temperature-low"></i><h3>低温工艺</h3><p>更关注活性保留与头皮舒适感。</p></div>
-      <div class="benefit-card"><i class="fas fa-ban"></i><h3>温和取向</h3><p>减少刺激性思路，适合长期使用。</p></div>
-      <div class="benefit-card"><i class="fas fa-check-double"></i><h3>问题导向</h3><p>围绕油、屑、痒、弱四类问题做改进。</p></div>
+    <h2 class="section-title center">为什么选择苗本芳养发皂？</h2>
+    <p class="section-desc center">三大核心优势，从根源解决头皮问题</p>
+    
+    <div class="why-grid">
+      <div class="why-card animate-on-scroll">
+        <div class="why-icon">🌿</div>
+        <h3>18味苗方 · 根源调理</h3>
+        <p>甄选18味天然苗方草本植物，遵循古法配伍，从根源调理头皮微生态，天然温和更有效。</p>
+      </div>
+
+      <div class="why-card animate-on-scroll">
+        <div class="why-icon">⏳</div>
+        <h3>45天冷制 · 锁住活性</h3>
+        <p>坚持45天超长冷制熟成工艺，最大程度保留草本植物活性成分，让养发效果加倍。</p>
+      </div>
+
+      <div class="why-card animate-on-scroll">
+        <div class="why-icon">✅</div>
+        <h3>5大0添加 · 安全温和</h3>
+        <p>承诺无硅油、无皂基、无香精、无色素、无防腐剂，安全温和，老人小孩全家都能用。</p>
+      </div>
+    </div>
+
+    <div class="why-bottom">
+      <div class="why-bottom-item">
+        <h4>四大核心功效一步到位</h4>
+        <p>精准解决头皮困扰：深层控油平衡水油、植物配方去屑、舒缓头皮止痒、滋养发根固发。</p>
+      </div>
+      <div class="why-bottom-item">
+        <h4>新人专属超值福利</h4>
+        <p>限时活动价格美丽，下单即享多重赠品。草本养发体验装、配套起泡网等实用好礼送不停！</p>
+        <a href="#contact" class="btn btn-primary" style="margin-top:12px;">立即咨询</a>
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+.why-us { padding: 100px 0; background: linear-gradient(180deg, #fafaf9, #f0f7ee); }
+.why-us .section-title { margin-bottom: 8px; }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto 48px;
+}
+
+.why-card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line-light);
+  transition: all var(--transition);
+}
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.why-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.why-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin: 0 0 12px;
+}
+
+.why-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.why-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.why-bottom-item {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line-light);
+}
+
+.why-bottom-item h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin: 0 0 12px;
+}
+
+.why-bottom-item p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .why-grid { grid-template-columns: 1fr; }
+  .why-bottom { grid-template-columns: 1fr; }
+}
+</style>
+
 {% schema %}{"name":"Why Us","settings":[],"presets":[{"name":"Why Us"}]}{% endschema %}
