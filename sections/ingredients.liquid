@@ -4,27 +4,64 @@
     <p class="section-desc">源自《苗族医药学》18味苗家古方 · 科学配伍</p>
     <p class="section-subdesc">精选草本协同调理，兼顾清洁力与头皮舒适度。</p>
     
-    <h3 class="foundation-title">🌱 养发根基</h3>
-    <div class="ingredient-grid">
-      <div class="ingredient-card">
-        <div class="ingredient-img"><img src="{{ 'slide4_img11_14.png' | asset_url }}" alt="何首乌"></div>
-        <h3>何首乌</h3>
-        <p>滋养发根，改善干枯脆弱。</p>
+    <div class="herb-categories">
+      <!-- 养发根基 -->
+      <div class="herb-category">
+        <h3 class="category-title">🌱 养发根基</h3>
+        <div class="herb-items">
+          <div class="herb-item">
+            <div class="herb-img"><img src="{{ 'slide4_img11_14.png' | asset_url }}" alt="何首乌"></div>
+            <h4>何首乌</h4>
+          </div>
+          <div class="herb-item">
+            <div class="herb-img"><img src="{{ 'slide4_img12_15.png' | asset_url }}" alt="桑葚"></div>
+            <h4>桑葚</h4>
+          </div>
+          <div class="herb-item">
+            <div class="herb-img"><img src="{{ 'slide4_img13_16.png' | asset_url }}" alt="墨旱莲"></div>
+            <h4>墨旱莲</h4>
+          </div>
+          <div class="herb-item">
+            <div class="herb-img"><img src="{{ 'slide4_img14_17.png' | asset_url }}" alt="侧柏叶"></div>
+            <h4>侧柏叶</h4>
+          </div>
+        </div>
       </div>
-      <div class="ingredient-card">
-        <div class="ingredient-img"><img src="{{ 'slide4_img12_15.png' | asset_url }}" alt="桑葚"></div>
-        <h3>桑葚</h3>
-        <p>帮助平衡头皮环境。</p>
+
+      <!-- 控油净澈 -->
+      <div class="herb-category">
+        <h3 class="category-title">💧 控油净澈</h3>
+        <div class="herb-tags">
+          <span class="herb-tag">皂角</span>
+          <span class="herb-tag">无患子</span>
+          <span class="herb-tag">侧柏叶</span>
+          <span class="herb-tag">茶枯</span>
+        </div>
       </div>
-      <div class="ingredient-card">
-        <div class="ingredient-img"><img src="{{ 'slide4_img13_16.png' | asset_url }}" alt="墨旱莲"></div>
-        <h3>墨旱莲</h3>
-        <p>舒缓头皮，提升韧性。</p>
+
+      <!-- 舒缓清洁 -->
+      <div class="herb-category">
+        <h3 class="category-title">🌿 舒缓清洁</h3>
+        <div class="herb-tags">
+          <span class="herb-tag">艾叶</span>
+          <span class="herb-tag">苦参</span>
+          <span class="herb-tag">蛇床子</span>
+          <span class="herb-tag">地肤子</span>
+          <span class="herb-tag">薄荷</span>
+        </div>
       </div>
-      <div class="ingredient-card">
-        <div class="ingredient-img"><img src="{{ 'slide4_img14_17.png' | asset_url }}" alt="侧柏叶"></div>
-        <h3>侧柏叶</h3>
-        <p>辅助净屑，维持清爽感。</p>
+
+      <!-- 活络疏通 -->
+      <div class="herb-category">
+        <h3 class="category-title">🔄 活络疏通</h3>
+        <div class="herb-tags">
+          <span class="herb-tag">丹参</span>
+          <span class="herb-tag">川芎</span>
+          <span class="herb-tag">透骨草</span>
+          <span class="herb-tag">骨碎补</span>
+          <span class="herb-tag">桑叶</span>
+          <span class="herb-tag">榆皮</span>
+        </div>
       </div>
     </div>
   </div>
@@ -32,35 +69,53 @@
 
 <style>
 .ingredients { padding: 80px 0; background: #f8f9f0; }
-.section-subdesc { text-align: center; color: #888; font-size: 14px; margin-top: -10px; margin-bottom: 32px; }
-.foundation-title {
-  text-align: center;
-  font-size: 22px;
-  color: #4a7c3f;
-  margin-bottom: 32px;
-  padding-bottom: 16px;
-  border-bottom: 2px solid #4a7c3f;
-  display: inline-block;
-  width: 100%;
-}
-.ingredient-grid {
+.section-subdesc { text-align: center; color: #888; font-size: 14px; margin-top: -10px; margin-bottom: 40px; }
+
+.herb-categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
 }
-.ingredient-card {
+.herb-category {
   background: white;
-  border-radius: 16px;
-  padding: 28px 20px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   transition: transform 0.3s;
 }
-.ingredient-card:hover { transform: translateY(-4px); }
-.ingredient-img { margin-bottom: 16px; }
-.ingredient-img img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; }
-.ingredient-card h3 { font-size: 18px; color: #2d4a2a; margin-bottom: 8px; }
-.ingredient-card p { font-size: 14px; color: #666; line-height: 1.6; }
+.herb-category:hover { transform: translateY(-4px); }
+.category-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4a7c3f;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e8f0e0;
+}
+.herb-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.herb-item { text-align: center; }
+.herb-img { margin-bottom: 8px; }
+.herb-img img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
+.herb-item h4 { font-size: 15px; color: #2d4a2a; margin: 0; }
+.herb-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.herb-tag {
+  background: #f0f5eb;
+  color: #4a7c3f;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
 </style>
 
 {% schema %}{"name":"Ingredients","settings":[],"presets":[{"name":"Ingredients"}]}{% endschema %}
