@@ -1,0 +1,12 @@
+# OS
+Thumbs.db
+Desktop.ini
+
+# Editor
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Shopify
+.DS_Store

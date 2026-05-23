@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苗本芳养发皂 - 源自苗家古方的头皮养护方案</title>
+    <meta name="description" content="苗本芳养发皂，传承苗家草本智慧，45天低温冷制，0刺激配方，帮助头皮控油、去屑、止痒与固发。">
+    {{ content_for_header }}
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+{% section 'header' %}
+{{ content_for_layout }}
+{% section 'trust-bar' %}
+{% section 'footer' %}
+
+<a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
+<div class="toast" id="toast"></div>
+
+{{ 'main.js' | asset_url | script_tag }}
+</body>
+</html>

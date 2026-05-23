@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "hero": { "type": "hero" },
+    "pain-points": { "type": "pain-points" },
+    "product-intro": { "type": "product-intro" },
+    "brand-story": { "type": "brand-story" },
+    "ingredients": { "type": "ingredients" },
+    "technology": { "type": "technology" },
+    "effects": { "type": "effects" },
+    "how-to-use": { "type": "how-to-use" },
+    "product-line": { "type": "product-line" },
+    "certification": { "type": "certification" },
+    "why-us": { "type": "why-us" },
+    "contact": { "type": "contact" }
+  },
+  "order": [
+    "hero",
+    "pain-points",
+    "product-intro",
+    "brand-story",
+    "ingredients",
+    "technology",
+    "effects",
+    "how-to-use",
+    "product-line",
+    "certification",
+    "why-us",
+    "contact"
+  ]
+}
