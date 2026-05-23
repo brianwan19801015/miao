@@ -1,6 +1,6 @@
-<section class="massage-tips" id="massage-tips">
+<section class="massage-tips" id="massage-tips" style="background: url('{{ 'slide9_img0_29.png' | asset_url }}') center/cover no-repeat;">
   <div class="container">
-    <h2 class="section-title">正确按摩，效果加倍</h2>
+    <h2 class="section-title" style="color:#fff;">正确按摩，效果加倍</h2>
     <div class="tips-grid">
       <div class="tip-card">
         <div class="tip-number">01</div>
@@ -22,10 +22,12 @@
 </section>
 
 <style>
-.massage-tips {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #f0f5eb 0%, #e2ecd9 100%);
+.massage-tips { padding: 100px 0; position: relative; }
+.massage-tips::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(0,0,0,0.55); z-index: 1;
 }
+.massage-tips .container { position: relative; z-index: 2; }
 .tips-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

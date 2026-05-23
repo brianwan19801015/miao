@@ -1,6 +1,6 @@
-<section class="zero-add" id="zero-add">
+<section class="zero-add" id="zero-add" style="background: url('{{ 'slide6_img0_26.png' | asset_url }}') center/cover no-repeat;">
   <div class="container">
-    <h2 class="section-title">5大0添加，给头皮最纯净的呵护</h2>
+    <h2 class="section-title" style="color:#fff;">5大0添加，给头皮最纯净的呵护</h2>
     <div class="zero-grid">
       <div class="zero-card">
         <div class="zero-icon"><i class="fas fa-ban"></i></div>
@@ -32,10 +32,12 @@
 </section>
 
 <style>
-.zero-add {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #f8f9f0 0%, #e8f0e0 100%);
+.zero-add { padding: 100px 0; position: relative; }
+.zero-add::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(0,0,0,0.55); z-index: 1;
 }
+.zero-add .container { position: relative; z-index: 2; }
 .zero-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
