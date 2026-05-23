@@ -2,9 +2,15 @@
   <div class="container">
     <h2 class="section-title">核心科技：低温冷制 + 精简配方</h2>
     
-    <div class="tech-block">
-      <div class="tech-image"><img src="{{ 'slide5_img0_18.png' | asset_url }}" alt="45天冷制工艺"></div>
-      <div class="tech-text">
+    <div class="tech-compare">
+      <div class="compare-card compare-old">
+        <span class="badge badge-danger">传统热制工艺</span>
+        <h3>高温破坏 · 活性成分严重流失</h3>
+        <div class="compare-icon">🔥</div>
+        <p>为追求量产效率，普遍采用100℃+高温皂化。虽然缩短了制作周期，但会不可逆地破坏草本中的天然维生素、氨基酸等活性物质，仅存基础清洁功能。</p>
+      </div>
+      <div class="compare-vs">VS</div>
+      <div class="compare-card compare-new">
         <span class="badge">CORE TECHNOLOGY 01</span>
         <h3>45天古法冷制锁活</h3>
         <p class="tech-highlight">核心优势：活性成分0流失，让清洁变成深度养护</p>
@@ -88,6 +94,45 @@
   color: #666;
 }
 .tech-desc { font-size: 14px; color: #666; line-height: 1.7; }
+.tech-compare {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 60px;
+}
+.compare-card {
+  flex: 1;
+  padding: 32px 28px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.compare-old {
+  background: #fff5f5;
+  border: 1px solid #ffd7d7;
+}
+.compare-new {
+  background: #f0f5eb;
+  border: 1px solid #d4e8c8;
+}
+.badge-danger {
+  background: #e74c3c;
+  color: white;
+}
+.compare-card h3 { font-size: 20px; margin-bottom: 12px; }
+.compare-old h3 { color: #c0392b; }
+.compare-new h3 { color: #2d4a2a; }
+.compare-icon { font-size: 48px; text-align: center; margin-bottom: 16px; }
+.compare-card p { font-size: 14px; line-height: 1.8; color: #555; }
+.compare-vs {
+  font-size: 24px;
+  font-weight: 800;
+  color: #4a7c3f;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .tech-compare { flex-direction: column; }
+  .compare-vs { font-size: 18px; }
+}
 @media (max-width: 768px) {
   .tech-block, .tech-block.reverse { flex-direction: column; }
   .tech-stats { flex-direction: column; }
