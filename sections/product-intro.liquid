@@ -1,18 +1,83 @@
-﻿<section class="product-intro" id="product">
+<section class="product-intro" id="product">
   <div class="container product-intro-grid">
-    <div class="product-intro-image"><img src="{{ 'slide3_img0_7.png' | asset_url }}" alt="苗本芳养发皂"></div>
+    <div class="product-intro-image">
+      <img src="{{ 'slide3_product.png' | asset_url }}" alt="苗本芳养发皂">
+    </div>
     <div class="product-intro-text">
-      <span class="badge">PRODUCT POSITIONING</span>
-      <h2>产品定位 · POSITIONING</h2>
-      <p>这不是一块普通的香皂，而是一款集"清洁+养护+调理"于一体的头皮健康皂。专为现代人敏感、脆弱、出油的头皮环境研发，洗养同步，重塑头皮微生态。</p>
+      <div class="intro-block">
+        <span class="badge">BRAND STORY</span>
+        <h2>苗本芳养发皂 — 来自苗家的头皮养护智慧</h2>
+        <p>源于古老的苗族护发古方，结合现代低温冷制工艺，甄选十余种天然草本植萃。拒绝化学添加，只为还原植物本身的能量，带来最纯粹的头皮养护体验。</p>
+      </div>
+      
+      <div class="intro-block">
+        <span class="badge">PRODUCT POSITIONING</span>
+        <h2>产品定位 · POSITIONING</h2>
+        <p>这不是一块普通的香皂，而是一款集"清洁+养护+调理"于一体的头皮健康皂。专为现代人敏感、脆弱、出油的头皮环境研发，洗养同步，重塑头皮微生态。</p>
+      </div>
+      
       <ul class="product-features">
         <li><i class="fas fa-check-circle"></i> 18味草本复配</li>
         <li><i class="fas fa-check-circle"></i> 45天低温冷制</li>
         <li><i class="fas fa-check-circle"></i> 温和净养，敏感头皮可用</li>
         <li><i class="fas fa-check-circle"></i> 一块皂覆盖四大头皮诉求</li>
       </ul>
-      <a href="#contact" class="btn btn-primary">咨询套餐</a>
+      
+      <a href="#contact" class="btn btn-primary">咨询购买</a>
     </div>
   </div>
 </section>
+
+<style>
+.product-intro { padding: 80px 0; background: #fff; }
+.product-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.product-intro-image img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  display: block;
+  margin: 0 auto;
+}
+.intro-block { margin-bottom: 28px; }
+.intro-block .badge { margin-bottom: 8px; }
+.intro-block h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2d4a2a;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+.intro-block p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.8;
+  margin: 0;
+}
+.product-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+.product-features li {
+  padding: 8px 0;
+  font-size: 15px;
+  color: #333;
+}
+.product-features i {
+  color: #4a7c3f;
+  margin-right: 10px;
+}
+@media (max-width: 768px) {
+  .product-intro-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+</style>
+
 {% schema %}{"name":"Product Intro","settings":[],"presets":[{"name":"Product Intro"}]}{% endschema %}

@@ -1,12 +1,70 @@
-﻿<section class="brand-story" id="brand">
+<section class="brand-story" id="brand">
   <div class="container story-grid">
-    <div class="story-text">
-      <span class="badge">BRAND STORY</span>
-      <h2>苗本芳养发皂——来自苗家的头皮养护智慧</h2>
-      <p>源于古老的苗族护发古方，结合现代低温冷制工艺，甄选十余种天然草本植萃。拒绝化学添加，只为还原植物本身的能量，带来最纯粹的头皮养护体验。</p>
-      <p>苗本芳养发皂——来自苗家的头皮养护智慧</p>
+    <div class="story-image">
+      <img src="{{ 'slide3_img1_8.png' | asset_url }}" alt="苗家草本">
     </div>
-    <div class="story-image"><img src="{{ 'slide3_img1_8.png' | asset_url }}" alt="品牌故事"></div>
+    <div class="story-text">
+      <span class="badge">苗家智慧</span>
+      <h2>传承苗家古方，现代科技赋能</h2>
+      <p>苗本芳养发皂融合苗族千年护发智慧与现代低温冷制工艺，精选18味草本科学配伍，从根源调理头皮微生态。</p>
+      <ul class="story-points">
+        <li><i class="fas fa-leaf"></i> 18味苗家草本 · 君臣佐使科学配伍</li>
+        <li><i class="fas fa-snowflake"></i> 45天低温冷制 · 锁住活性成分</li>
+        <li><i class="fas fa-ban"></i> 5大0添加 · 温和安全不刺激</li>
+      </ul>
+      <a href="#ingredients" class="btn btn-outline">探索18味草本 →</a>
+    </div>
   </div>
 </section>
+
+<style>
+.brand-story { padding: 80px 0; background: #f8f9f0; }
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.story-image img {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+.story-text .badge { margin-bottom: 12px; }
+.story-text h2 {
+  font-size: 28px;
+  color: #2d4a2a;
+  margin: 0 0 16px;
+  line-height: 1.3;
+}
+.story-text p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin: 0 0 20px;
+}
+.story-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+.story-points li {
+  padding: 10px 0;
+  font-size: 15px;
+  color: #333;
+  border-bottom: 1px solid #e8f0e0;
+}
+.story-points li:last-child { border-bottom: none; }
+.story-points i {
+  color: #4a7c3f;
+  margin-right: 10px;
+  width: 20px;
+}
+@media (max-width: 768px) {
+  .story-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+</style>
+
 {% schema %}{"name":"Brand Story","settings":[],"presets":[{"name":"Brand Story"}]}{% endschema %}
