@@ -1,6 +1,6 @@
 <section class="how-to-use" id="how-to-use">
   <div class="container">
-    <h2 class="section-title">3步完成一次高质量洗护</h2>
+    <h2 class="section-title">三步轻松养发，懒人也能坚持</h2>
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-img"><img src="{{ 'slide9_img7_30.png' | asset_url }}" alt="起泡"></div>
@@ -21,6 +21,85 @@
         <p>温水彻底冲净，保持头皮轻盈状态。</p>
       </div>
     </div>
+
+    <div class="tips-section">
+      <h3 class="tips-title">💡 正确按摩，效果加倍</h3>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">📅</div>
+          <h4>按需调整频率</h4>
+          <p>油性头皮可隔天使用一次，中性或干性头皮建议每周2-3次，维持头皮健康状态。</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">👆</div>
+          <h4>强调指腹按摩</h4>
+          <p>用指腹进行打圈按摩，而不是用指甲用力抓挠，能有效避免损伤头皮屏障。</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">⏱️</div>
+          <h4>保证充足时长</h4>
+          <p>每次按摩时间建议在3分钟以上，让产品有效成分充分渗透并被头皮吸收。</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+.how-to-use { padding: 80px 0; background: #f8f9f0; }
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 28px;
+  margin-bottom: 60px;
+}
+.step-card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+.step-card:hover { transform: translateY(-4px); }
+.step-img { margin-bottom: 16px; }
+.step-img img { width: 160px; height: 160px; border-radius: 16px; object-fit: cover; }
+.step-number {
+  font-size: 36px;
+  font-weight: 800;
+  color: #4a7c3f;
+  opacity: 0.3;
+  margin-bottom: 8px;
+}
+.step-card h3 { font-size: 20px; color: #2d4a2a; margin-bottom: 8px; }
+.step-card p { font-size: 14px; color: #666; line-height: 1.7; }
+
+.tips-section {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 32px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.tips-title {
+  text-align: center;
+  font-size: 22px;
+  color: #2d4a2a;
+  margin-bottom: 32px;
+}
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+.tip-card {
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  background: #f8f9f0;
+}
+.tip-icon { font-size: 36px; margin-bottom: 12px; }
+.tip-card h4 { font-size: 16px; color: #2d4a2a; margin-bottom: 8px; }
+.tip-card p { font-size: 13px; color: #666; line-height: 1.7; }
+</style>
+
 {% schema %}{"name":"How To Use","settings":[],"presets":[{"name":"How To Use"}]}{% endschema %}
