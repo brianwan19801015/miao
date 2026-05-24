@@ -38,6 +38,30 @@
   /* 过渡 */
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ===== 排版系统 ===== */
+  /* 标题层级 */
+  --h1-size: clamp(32px, 4vw, 46px);
+  --h2-size: clamp(24px, 3vw, 34px);
+  --h3-size: 20px;
+  --h4-size: 17px;
+
+  /* 正文 */
+  --body-size: 15px;
+  --body-small: 14px;
+  --body-xs: 13px;
+  --caption-size: 12px;
+
+  /* 行高 */
+  --lh-tight: 1.2;
+  --lh-normal: 1.6;
+  --lh-loose: 1.8;
+
+  /* 字重 */
+  --fw-bold: 700;
+  --fw-semibold: 600;
+  --fw-medium: 500;
+  --fw-normal: 400;
 }
 
 /* ===================== Reset & Base ===================== */
@@ -149,14 +173,20 @@ a:hover { color: var(--brand); }
 .btn-lg { padding: 16px 36px; font-size: 16px; }
 
 /* ===================== Section Common ===================== */
-section { padding: 100px 0; position: relative; }
+section { padding: 80px 0; position: relative; }
+
+/* 统一卡片标题/正文 */
+.card-title { font-size: var(--h3-size); font-weight: var(--fw-bold); color: var(--brand-dark); margin: 0 0 8px; }
+.card-text { font-size: var(--body-small); color: var(--text-secondary); line-height: var(--lh-normal); margin: 0; }
+.section-subtitle { font-size: var(--h4-size); font-weight: var(--fw-bold); color: var(--brand-dark); margin: 0 0 8px; }
 
 .section-title {
   margin: 0 0 12px;
-  font-size: clamp(28px, 3.5vw, 40px);
+  font-size: var(--h2-size);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: var(--lh-tight);
   letter-spacing: -0.5px;
+  color: var(--brand-dark);
 }
 .section-title.center { text-align: center; }
 .section-title span { color: var(--brand); }
@@ -164,9 +194,9 @@ section { padding: 100px 0; position: relative; }
 .section-desc {
   margin: 0 auto 48px;
   color: var(--text-secondary);
-  font-size: 17px;
+  font-size: var(--body-size);
   max-width: 640px;
-  line-height: 1.6;
+  line-height: var(--lh-normal);
 }
 .section-desc.center { text-align: center; }
 
@@ -176,8 +206,8 @@ section { padding: 100px 0; position: relative; }
   border-radius: var(--radius-full);
   background: var(--brand-subtle);
   color: var(--brand);
-  font-size: 13px;
-  font-weight: 700;
+  font-size: var(--body-xs);
+  font-weight: var(--fw-bold);
   letter-spacing: 0.5px;
   margin-bottom: 16px;
   text-transform: uppercase;

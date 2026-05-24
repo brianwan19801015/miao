@@ -89,13 +89,13 @@
   color: white;
   padding: 4px 16px;
   border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: var(--caption-size);
+  font-weight: var(--fw-semibold);
   letter-spacing: 1px;
   margin-bottom: 12px;
 }
-.tech-text h3 { font-size: 24px; color: #2d4a2a; margin-bottom: 8px; }
-.tech-highlight { font-size: 16px; color: #4a7c3f; font-weight: 600; margin-bottom: 24px; }
+.tech-text h3 { font-size: 24px; color: var(--brand-dark); margin-bottom: 8px; }
+.tech-highlight { font-size: 16px; color: var(--brand); font-weight: var(--fw-semibold); margin-bottom: 24px; }
 .tech-stats {
   display: flex;
   gap: 20px;
@@ -112,15 +112,15 @@
   display: block;
   font-size: 28px;
   font-weight: 800;
-  color: #4a7c3f;
+  color: var(--brand);
   margin-bottom: 4px;
 }
 .tech-stat-label {
   display: block;
-  font-size: 13px;
-  color: #666;
+  font-size: var(--body-xs);
+  color: var(--text-secondary);
 }
-.tech-desc { font-size: 14px; color: #666; line-height: 1.7; }
+.tech-desc { font-size: var(--body-small); color: var(--text-secondary); line-height: 1.7; }
 
 /* 5大0添加 */
 .zero-add-section {
@@ -138,12 +138,12 @@
 .zero-add-header h3 {
   font-size: 24px;
   font-weight: 700;
-  color: #2d4a2a;
+  color: var(--brand-dark);
   margin: 12px 0 8px;
 }
 .zero-add-sub {
-  font-size: 15px;
-  color: #6b7280;
+  font-size: var(--body-size);
+  color: var(--text-secondary);
   margin: 0;
 }
 .zero-add-grid {
@@ -168,15 +168,15 @@
   margin-bottom: 12px;
 }
 .zero-add-item h4 {
-  font-size: 17px;
-  font-weight: 700;
-  color: #2d4a2a;
+  font-size: var(--h4-size);
+  font-weight: var(--fw-bold);
+  color: var(--brand-dark);
   margin: 0 0 8px;
 }
 .zero-add-item p {
-  font-size: 13px;
-  color: #6b7280;
-  line-height: 1.7;
+  font-size: var(--body-xs);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
   margin: 0;
 }
 .tech-compare {
@@ -203,15 +203,15 @@
   background: #e74c3c;
   color: white;
 }
-.compare-card h3 { font-size: 20px; margin-bottom: 12px; }
+.compare-card h3 { font-size: var(--h3-size); margin-bottom: 12px; }
 .compare-old h3 { color: #c0392b; }
-.compare-new h3 { color: #2d4a2a; }
+.compare-new h3 { color: var(--brand-dark); }
 .compare-icon { font-size: 48px; text-align: center; margin-bottom: 16px; }
-.compare-card p { font-size: 14px; line-height: 1.8; color: #555; }
+.compare-card p { font-size: var(--body-small); color: var(--text-secondary); }
 .compare-vs {
   font-size: 24px;
   font-weight: 800;
-  color: #4a7c3f;
+  color: var(--brand);
   flex-shrink: 0;
 }
 @media (max-width: 768px) {

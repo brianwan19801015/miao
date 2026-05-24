@@ -290,7 +290,7 @@
   color: #888;
   margin-bottom: 16px;
 }
-.article-breadcrumb a { color: #4a7c3f; text-decoration: underline; }
+.article-breadcrumb a { color: var(--brand); text-decoration: underline; }
 .article-breadcrumb .sep { margin: 0 8px; color: #ccc; }
 
 /* 文章标题 */
@@ -330,7 +330,7 @@
 .article-toc h3 {
   margin: 0 0 14px;
   font-size: 18px;
-  color: #2d4a2a;
+  color: var(--brand-dark);
 }
 .article-toc ul {
   list-style: none;
@@ -343,12 +343,12 @@
 }
 .article-toc li:last-child { border-bottom: none; }
 .article-toc a {
-  color: #4a7c3f;
+  color: var(--brand);
   text-decoration: none;
   font-size: 15px;
   transition: color 0.2s;
 }
-.article-toc a:hover { color: #2d4a2a; text-decoration: underline; }
+.article-toc a:hover { color: var(--brand-dark); text-decoration: underline; }
 
 /* 文章段落 */
 .article-section {
@@ -363,7 +363,7 @@
 }
 .article-section h3 {
   font-size: 18px;
-  color: #2d4a2a;
+  color: var(--brand-dark);
   margin: 24px 0 12px;
 }
 .article-section p {
@@ -403,7 +403,7 @@
   font-size: 15px;
   color: #444;
 }
-.check-list i { color: #4a7c3f; margin-right: 10px; }
+.check-list i { color: var(--brand); margin-right: 10px; }
 
 /* 提示框 */
 .info-box {
@@ -415,7 +415,7 @@
   align-items: flex-start;
   margin: 20px 0;
 }
-.info-box-icon { font-size: 22px; color: #4a7c3f; flex-shrink: 0; }
+.info-box-icon { font-size: 22px; color: var(--brand); flex-shrink: 0; }
 .info-box-content { font-size: 14px; color: #3a5a3a; line-height: 1.7; }
 
 /* 步骤指南 */
@@ -473,7 +473,7 @@
 .scenario-icon {
   font-size: 28px;
   margin-bottom: 10px;
-  color: #4a7c3f;
+  color: var(--brand);
 }
 .scenario-card h3 {
   font-size: 16px;
@@ -493,7 +493,7 @@
 }
 .scenario-card li::before {
   content: "✓ ";
-  color: #4a7c3f;
+  color: var(--brand);
   font-weight: 700;
 }
 
@@ -588,7 +588,7 @@
 .timeline-content h3 {
   margin: 0 0 6px;
   font-size: 16px;
-  color: #2d4a2a;
+  color: var(--brand-dark);
 }
 .timeline-content p {
   margin: 0;
@@ -613,7 +613,7 @@
 .factor-card:hover { transform: translateY(-3px); }
 .factor-card i {
   font-size: 28px;
-  color: #4a7c3f;
+  color: var(--brand);
   margin-bottom: 8px;
 }
 .factor-card p {
@@ -654,9 +654,9 @@
   font-size: 15px;
   color: #1a3a1a;
 }
-.qa-item .q { color: #4a7c3f; font-weight: 700; }
-.qa-item .a { font-size: 14px; color: #555; line-height: 1.7; }
-.qa-item .a-label { color: #4a7c3f; font-weight: 700; }
+.qa-item .q { color: var(--brand); font-weight: 700; }
+.qa-item .a { font-size: var(--body-small); color: var(--text-secondary); line-height: 1.7; }
+.qa-item .a-label { color: var(--brand); font-weight: 700; }
 
 /* 总结框 */
 .summary-box {
@@ -668,7 +668,7 @@
 .summary-box h3 {
   margin: 0 0 12px;
   font-size: 18px;
-  color: #2d4a2a;
+  color: var(--brand-dark);
 }
 .summary-box p {
   margin: 0;
@@ -706,7 +706,7 @@
 .product-cta-info li i { color: #86efac; margin-right: 8px; }
 .product-cta-info .btn {
   background: #fff;
-  color: #2d4a2a;
+  color: var(--brand-dark);
   border: none;
 }
 .product-cta-info .btn:hover {

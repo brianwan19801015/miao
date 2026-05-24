@@ -39,9 +39,9 @@
 .faq-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
 .faq-question {
   padding: 18px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #2d4a2a;
+  font-size: var(--body-size);
+  font-weight: var(--fw-semibold);
+  color: var(--brand-dark);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -49,16 +49,16 @@
   user-select: none;
 }
 .faq-question:hover { background: #f8f9f0; }
-.faq-toggle { transition: transform 0.3s; color: #4a7c3f; }
+.faq-toggle { transition: transform 0.3s; color: var(--brand); }
 .faq-item.active .faq-toggle { transform: rotate(180deg); }
 .faq-answer {
   padding: 0 24px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
-  font-size: 14px;
-  color: #666;
-  line-height: 1.7;
+  font-size: var(--body-small);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
 }
 .faq-item.active .faq-answer {
   max-height: 200px;
