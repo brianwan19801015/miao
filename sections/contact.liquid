@@ -1,8 +1,8 @@
 <section class="contact" id="contact">
   <div class="container contact-wrap">
     <div class="contact-info">
-      <h2 class="section-title">咨询购买与合作</h2>
-      <p class="section-desc">告诉我们你的头皮状态，我们给你匹配建议与使用方案。</p>
+      <h2 class="section-title">{{ 'contact.title' | t }}</h2>
+      <p class="section-desc">{{ 'contact.desc' | t }}</p>
       <ul class="contact-list">
         <li><i class="fas fa-phone"></i> 电话：<span class="contact-val">400-000-0000</span></li>
         <li><i class="fas fa-comment-dots"></i> 微信：<span class="contact-val">miaobenfang</span></li>
@@ -10,20 +10,20 @@
       </ul>
     </div>
     <div class="contact-card">
-      <h3>快速咨询</h3>
-      <p>留下联系方式，我们将在24小时内为您匹配专属头皮护理方案。</p>
+      <h3>{{ 'contact.form_title' | t }}</h3>
+      <p>{{ 'contact.form_desc' | t }}</p>
       <form class="contact-form" action="#" method="POST">
         <input type="text" name="name" placeholder="您的姓名" required>
         <input type="text" name="phone" placeholder="手机号/微信号" required>
         <select name="concern">
-          <option value="">请选择您的头皮困扰</option>
-          <option value="oily">头皮易出油</option>
-          <option value="dandruff">头屑反复</option>
-          <option value="itchy">头皮发痒</option>
-          <option value="hairloss">掉发焦虑</option>
+          <option value="">{{ 'contact.form_placeholder' | t }}</option>
+          <option value="oily">{{ 'pain_points.item1_title' | t }}</option>
+          <option value="dandruff">{{ 'pain_points.item2_title' | t }}</option>
+          <option value="itchy">{{ 'pain_points.item3_title' | t }}</option>
+          <option value="hairloss">{{ 'pain_points.item4_title' | t }}</option>
           <option value="other">其他</option>
         </select>
-        <button type="submit" class="btn btn-primary btn-block">提交咨询</button>
+        <button type="submit" class="btn btn-primary btn-block">{{ 'contact.form_submit' | t }}</button>
       </form>
     </div>
   </div>

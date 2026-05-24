@@ -1,29 +1,36 @@
 <section class="pain-points" id="pain-points">
   <div class="container">
-    <h2 class="section-title center">你的头皮是否也在反复"闹情绪"？</h2>
-    <p class="section-desc center">头皮养得好，头发自然好 · 四大困扰你中了几个？</p>
+    <h2 class="section-title center">{{ 'pain_points.title' | t }}</h2>
+    <p class="section-desc center">{{ 'pain_points.desc' | t }}</p>
     <div class="pain-grid">
       <div class="pain-card animate-on-scroll">
-        <div class="pain-icon"><img src="{{ 'slide2_img6_3.png' | asset_url }}" alt="头皮易出油" loading="lazy"></div>
-        <h3>头皮易出油</h3>
-        <p>刚洗完没多久就油塌，发根扁塌、形象打折。</p>
+        <div class="pain-icon"><img src="{{ 'slide2_img6_3.png' | asset_url }}" alt="{{ 'pain_points.item1_title' | t }}" loading="lazy"></div>
+        <h3>{{ 'pain_points.item1_title' | t }}</h3>
+        <p>{{ 'pain_points.item1_desc' | t }}</p>
       </div>
       <div class="pain-card animate-on-scroll">
-        <div class="pain-icon"><img src="{{ 'slide2_img7_4.png' | asset_url }}" alt="头屑反复" loading="lazy"></div>
-        <h3>头屑反复</h3>
-        <p>黑衣不敢穿，肩膀总有白屑，社交场景容易尴尬。</p>
+        <div class="pain-icon"><img src="{{ 'slide2_img7_4.png' | asset_url }}" alt="{{ 'pain_points.item2_title' | t }}" loading="lazy"></div>
+        <h3>{{ 'pain_points.item2_title' | t }}</h3>
+        <p>{{ 'pain_points.item2_desc' | t }}</p>
       </div>
       <div class="pain-card animate-on-scroll">
-        <div class="pain-icon"><img src="{{ 'slide2_img8_5.png' | asset_url }}" alt="头皮发痒" loading="lazy"></div>
-        <h3>头皮发痒</h3>
-        <p>时不时想抓挠，影响专注与睡眠，状态持续下滑。</p>
+        <div class="pain-icon"><img src="{{ 'slide2_img8_5.png' | asset_url }}" alt="{{ 'pain_points.item3_title' | t }}" loading="lazy"></div>
+        <h3>{{ 'pain_points.item3_title' | t }}</h3>
+        <p>{{ 'pain_points.item3_desc' | t }}</p>
       </div>
       <div class="pain-card animate-on-scroll">
-        <div class="pain-icon"><img src="{{ 'slide2_img9_6.png' | asset_url }}" alt="掉发焦虑" loading="lazy"></div>
-        <h3>掉发焦虑</h3>
-        <p>洗头梳头都掉发，越掉越担心，形成恶性循环。</p>
+        <div class="pain-icon"><img src="{{ 'slide2_img9_6.png' | asset_url }}" alt="{{ 'pain_points.item4_title' | t }}" loading="lazy"></div>
+        <h3>{{ 'pain_points.item4_title' | t }}</h3>
+        <p>{{ 'pain_points.item4_desc' | t }}</p>
       </div>
     </div>
   </div>
 </section>
-{% schema %}{"name":"Pain Points","settings":[],"presets":[{"name":"Pain Points"}]}{% endschema %}
+
+{% schema %}
+{
+  "name": "Pain Points",
+  "settings": [],
+  "presets": [{ "name": "Pain Points" }]
+}
+{% endschema %}

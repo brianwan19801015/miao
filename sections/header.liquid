@@ -1,11 +1,11 @@
 ﻿<!-- Top Bar -->
 <div class="top-bar">
   <div class="container">
-    <div class="top-bar-left">苗本芳 · 源自苗家草本养发智慧</div>
+    <div class="top-bar-left">{{ 'general.brand' | t }} · {{ 'general.hero_slogan' | t }}</div>
     <div class="top-bar-right">
-      <a href="#contact">联系我们</a>
+      <a href="#contact">{{ 'general.contact_us' | t }}</a>
       <span class="sep">|</span>
-      <span>草本净养方案</span>
+      <span>{{ 'general.herbal_care' | t }}</span>
     </div>
   </div>
 </div>
@@ -13,17 +13,17 @@
 <header class="header" id="top">
   <div class="container header-inner">
     <a href="/" class="logo">
-      <img src="{{ 'slide1_img2_1.png' | asset_url }}" alt="苗本芳" loading="lazy">
-      <span>苗本芳</span>
+      <img src="{{ 'slide1_img2_1.png' | asset_url }}" alt="{{ 'general.brand' | t }}" loading="lazy">
+      <span>{{ 'general.brand' | t }}</span>
     </a>
     <nav class="nav">
-      <a href="/">首页</a>
-      <a href="/#product">产品介绍</a>
-      <a href="/#technology">核心科技</a>
-      <a href="/#effects">四大功效</a>
-      <a href="/#contact">咨询购买</a>
+      <a href="/">{{ 'general.home' | t }}</a>
+      <a href="/#product">{{ 'general.product' | t }}</a>
+      <a href="/#technology">{{ 'general.technology' | t }}</a>
+      <a href="/#effects">{{ 'general.effects' | t }}</a>
+      <a href="/#contact">{{ 'general.consult' | t }}</a>
     </nav>
-    <a href="#contact" class="btn btn-primary">立即咨询</a>
+    <a href="#contact" class="btn btn-primary">{{ 'general.consult_now' | t }}</a>
   </div>
 </header>
 

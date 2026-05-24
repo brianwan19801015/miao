@@ -1,25 +1,25 @@
 <section class="product-line" id="product-line">
   <div class="container">
-    <h2 class="section-title">产品系列</h2>
-    <p class="section-desc">从单品到组合，满足不同需求</p>
+    <h2 class="section-title">{{ 'product_line.title' | t }}</h2>
+    <p class="section-desc">{{ 'product_line.subtitle' | t }}</p>
     <div class="product-gifts">
       <div class="gift-item">
         <img src="{{ 'slide10_img0_33.png' | asset_url }}" alt="苗本芳养发皂" loading="lazy">
         <div class="gift-info">
-          <h3>苗本芳养发皂（单块装）</h3>
-          <p>草本净养 · 45天低温冷制 · 日常可持续使用</p>
+          <h3>{{ 'product_line.single_name' | t }}</h3>
+          <p>{{ 'product_line.single_desc' | t }}</p>
         </div>
       </div>
       <div class="gift-item">
         <div class="gift-info-only">
-          <h3>更多产品与组合</h3>
-          <p>联系我们了解：</p>
+          <h3>{{ 'product_line.more_title' | t }}</h3>
+          <p>{{ 'product_line.more_desc' | t }}</p>
           <ul>
-            <li>✅ 养发皂双块组合（更实惠）</li>
-            <li>✅ 养发皂+体验装礼盒</li>
-            <li>✅ 季度/半年护理套装</li>
+            <li>{{ 'product_line.more_item1' | t }}</li>
+            <li>{{ 'product_line.more_item2' | t }}</li>
+            <li>{{ 'product_line.more_item3' | t }}</li>
           </ul>
-          <a href="#contact" class="btn btn-primary" style="margin-top:12px;">咨询更多组合</a>
+          <a href="#contact" class="btn btn-primary" style="margin-top:12px;">{{ 'product_line.consult_btn' | t }}</a>
         </div>
       </div>
     </div>

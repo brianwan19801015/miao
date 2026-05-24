@@ -2,27 +2,27 @@
   <div class="hero-slider">
     <div class="hero-slide active" style="background-image: url('{{ 'slide1_img0_0.png' | asset_url }}');">
       <div class="container hero-content">
-        <span class="hero-badge">🌿 源自苗家古方 · 科学配伍</span>
-        <h1>苗本芳<span>养发皂</span></h1>
-        <p class="hero-slogan">头皮养得好，头发自然好</p>
-        <p>传承苗家草本智慧，45天低温冷制，<br>温和净养头皮生态</p>
-        <p class="hero-sub">控油 · 去屑 · 止痒 · 固发，一皂到位</p>
+        <span class="hero-badge">{{ 'general.hero_badge' | t }}</span>
+        <h1>{{ 'general.hero_title' | t | newline_to_br }}</h1>
+        <p class="hero-slogan">{{ 'general.hero_slogan' | t }}</p>
+        <p>{{ 'general.hero_desc' | t | newline_to_br }}</p>
+        <p class="hero-sub">{{ 'general.hero_tags' | t }}</p>
         <div class="hero-btns">
-          <a href="#ingredients" class="btn btn-primary btn-lg">探索18味草本</a>
-          <a href="#contact" class="btn btn-white btn-lg">咨询购买</a>
+          <a href="#ingredients" class="btn btn-primary btn-lg">{{ 'general.explore_herbs' | t }}</a>
+          <a href="#contact" class="btn btn-white btn-lg">{{ 'general.consult' | t }}</a>
         </div>
         <div class="hero-stats">
           <div class="hero-stat">
             <div class="hero-stat-number" data-target="18">0</div>
-            <div class="hero-stat-label">味苗家草本</div>
+            <div class="hero-stat-label">{{ 'general.herbs_count' | t }}</div>
           </div>
           <div class="hero-stat">
             <div class="hero-stat-number" data-target="45">0</div>
-            <div class="hero-stat-label">天低温冷制</div>
+            <div class="hero-stat-label">{{ 'general.cold_process' | t }}</div>
           </div>
           <div class="hero-stat">
             <div class="hero-stat-number" data-target="5">0</div>
-            <div class="hero-stat-label">大零添加</div>
+            <div class="hero-stat-label">{{ 'general.zero_add_count' | t }}</div>
           </div>
         </div>
       </div>
