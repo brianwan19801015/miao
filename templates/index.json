@@ -15,7 +15,6 @@
     "gifts": { "type": "gifts" },
     "testimonials": { "type": "testimonials" },
     "faq": { "type": "faq" },
-    "certification": { "type": "certification" },
     "why-us": { "type": "why-us" },
     "contact": { "type": "contact" }
   },
@@ -35,7 +34,6 @@
     "gifts",
     "testimonials",
     "faq",
-    "certification",
     "why-us",
     "contact"
   ]
