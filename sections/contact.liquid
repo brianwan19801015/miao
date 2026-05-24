@@ -4,24 +4,24 @@
       <h2 class="section-title">{{ 'contact.title' | t }}</h2>
       <p class="section-desc">{{ 'contact.desc' | t }}</p>
       <ul class="contact-list">
-        <li><i class="fas fa-phone"></i> 电话：<span class="contact-val">400-000-0000</span></li>
-        <li><i class="fas fa-comment-dots"></i> 微信：<span class="contact-val">miaobenfang</span></li>
-        <li><i class="fas fa-envelope"></i> 邮箱：<span class="contact-val">service@miaobenfang.com</span></li>
+        <li><i class="fas fa-phone"></i>{{ 'contact.phone_label' | t }}<span class="contact-val">400-000-0000</span></li>
+        <li><i class="fas fa-comment-dots"></i>{{ 'contact.wechat_label' | t }}<span class="contact-val">miaobenfang</span></li>
+        <li><i class="fas fa-envelope"></i>{{ 'contact.email_label' | t }}<span class="contact-val">service@miaobenfang.com</span></li>
       </ul>
     </div>
     <div class="contact-card">
       <h3>{{ 'contact.form_title' | t }}</h3>
       <p>{{ 'contact.form_desc' | t }}</p>
       <form class="contact-form" action="#" method="POST">
-        <input type="text" name="name" placeholder="您的姓名" required>
-        <input type="text" name="phone" placeholder="手机号/微信号" required>
+        <input type="text" name="name" placeholder="{{ 'contact.name_placeholder' | t }}" required>
+        <input type="text" name="phone" placeholder="{{ 'contact.phone_placeholder' | t }}" required>
         <select name="concern">
           <option value="">{{ 'contact.form_placeholder' | t }}</option>
           <option value="oily">{{ 'pain_points.item1_title' | t }}</option>
           <option value="dandruff">{{ 'pain_points.item2_title' | t }}</option>
           <option value="itchy">{{ 'pain_points.item3_title' | t }}</option>
           <option value="hairloss">{{ 'pain_points.item4_title' | t }}</option>
-          <option value="other">其他</option>
+          <option value="other">{{ 'contact.other_label' | t }}</option>
         </select>
         <button type="submit" class="btn btn-primary btn-block">{{ 'contact.form_submit' | t }}</button>
       </form>

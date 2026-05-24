@@ -47,7 +47,8 @@
     "heritage_item1": "18 Miao Herbs · Science-Based Formula",
     "heritage_item2": "45-Day Cold Process · Preserves Active Ingredients",
     "heritage_item3": "5 Zero-Additives · Gentle & Safe",
-    "explore_link": "Explore 18 Herbs →"
+    "explore_link": "Explore 18 Herbs →",
+    "alt": "Miao Ben Fang Hair Soap"
   },
   "ingredients": {
     "title": "18 Herbal Blend — Gentle, Natural Scalp Care",
@@ -59,7 +60,33 @@
     "group3_name": "Soothing & Cleansing",
     "group3_herbs": "Mugwort, Sophora, Cnidium, Kochia, Mint",
     "group4_name": "Circulation & Unblocking",
-    "group4_herbs": "Salvia, Ligusticum, Aconitum, Drynaria, Mulberry Leaf, Elm Bark"
+    "group4_herbs": "Salvia, Ligusticum, Aconitum, Drynaria, Mulberry Leaf, Elm Bark",
+    "group1_alt": "Hair Nourishing Foundation",
+    "group2_alt": "Oil Control & Purifying",
+    "group3_alt": "Soothing & Cleansing",
+    "group4_alt": "Circulation & Unblocking",
+    "herb_goutouwu": "Polygonum Multiflorum",
+    "herb_sangshen": "Mulberry",
+    "herb_mohanlian": "Eclipta",
+    "herb_zaojiao": "Soapberry",
+    "herb_wuhuanzi": "Soap Nut",
+    "herb_cebaiye": "Arborvitae",
+    "herb_chaku": "Tea Seed",
+    "herb_aiye": "Mugwort",
+    "herb_kushen": "Sophora",
+    "herb_shechuangzi": "Cnidium",
+    "herb_difuzi": "Kochia",
+    "herb_bohe": "Mint",
+    "herb_danshen": "Salvia",
+    "herb_chuanxiong": "Ligusticum",
+    "herb_tougucao": "Aconitum",
+    "herb_gusubu": "Drynaria",
+    "herb_sangye": "Mulberry Leaf",
+    "herb_yupi": "Elm Bark",
+    "group1_icon_title": "🌱 Hair Nourishing Foundation",
+    "group2_icon_title": "💧 Oil Control & Purifying",
+    "group3_icon_title": "🌿 Soothing & Cleansing",
+    "group4_icon_title": "🔄 Circulation & Unblocking"
   },
   "technology": {
     "title": "3 Core Advantages — Redefining Scalp Cleansing",
@@ -84,7 +111,12 @@
     "zero_item5_name": "0 Artificial Fragrance",
     "zero_item5_desc": "Only natural herbal scent — no synthetic perfumes.",
     "cold_label1": "Preserve Herbal Actives",
-    "cold_label2": "Natural Saponification"
+    "cold_label2": "Natural Saponification",
+    "zero_item1_name_label": "0 Silicone",
+    "zero_item2_name_label": "0 SLS/SLES",
+    "zero_item3_name_label": "0 Preservatives",
+    "zero_item4_name_label": "0 Sulfates",
+    "zero_item5_name_label": "0 Artificial Fragrance"
   },
   "zero_add": {
     "title": "5 Zero-Additives — Pure Scalp Care",
@@ -97,7 +129,12 @@
     "item4_name": "0 Sulfates",
     "item4_desc": "No harsh cleansing agents — gentle enough for sensitive skin.",
     "item5_name": "0 Artificial Fragrance",
-    "item5_desc": "Only natural herbal scent — no synthetic perfumes."
+    "item5_desc": "Only natural herbal scent — no synthetic perfumes.",
+    "item1_name_alt": "0 Silicone",
+    "item2_name_alt": "0 SLS/SLES",
+    "item3_name_alt": "0 Preservatives",
+    "item4_name_alt": "0 Sulfates",
+    "item5_name_alt": "0 Artificial Fragrance"
   },
   "why_us": {
     "title": "Why Choose Miao Ben Fang?",
@@ -138,7 +175,11 @@
     "item4_label": "Anti-Breakage",
     "item4_title": "Strong & Resilient",
     "item4_desc": "Strengthens fragile hair, reduces breakage.",
-    "item4_report": "Report: XYJCR260328-111"
+    "item4_report": "Report: XYJCR260328-111",
+    "item1_icon_label": "🧴 Anti-Dandruff",
+    "item2_icon_label": "💧 Oil Control",
+    "item3_icon_label": "🌿 Nourishing",
+    "item4_icon_label": "🛡️ Anti-Breakage"
   },
   "gifts": {
     "title": "Free Gifts Worth Over ¥100!",
@@ -151,7 +192,10 @@
     "item2_desc": "Double-layer design keeps soap dry and extends its lifespan.",
     "item3_name": "Air Cushion Comb",
     "item3_tier": "(free with 3 boxes)",
-    "item3_desc": "Flexible bristles gently massage the scalp, relieving tension and boosting circulation."
+    "item3_desc": "Flexible bristles gently massage the scalp, relieving tension and boosting circulation.",
+    "item1_alt": "Bubble Net",
+    "item2_alt": "Drainage Soap Box",
+    "item3_alt": "Air Cushion Comb"
   },
   "how_to_use": {
     "title": "3 Simple Steps — Easy Enough for Anyone",
@@ -160,7 +204,10 @@
     "step2_title": "Massage",
     "step2_desc": "Apply foam to scalp and hair, massage gently with fingertips for 3-5 minutes.",
     "step3_title": "Rinse",
-    "step3_desc": "Rinse thoroughly with warm water. Scalp feels fresh and residue-free."
+    "step3_desc": "Rinse thoroughly with warm water. Scalp feels fresh and residue-free.",
+    "step1_icon_title": "Lather",
+    "step2_icon_title": "Massage",
+    "step3_icon_title": "Rinse"
   },
   "massage_tips": {
     "title": "Right Massage, Better Results",
@@ -182,7 +229,13 @@
     "item2_tag": "Dandruff · 2 Months",
     "item3_text": "My scalp became sensitive after pregnancy. This soap has no fragrance, feels gentle and safe.",
     "item3_author": "Ms. Wang",
-    "item3_tag": "Sensitive Scalp · 3 Weeks"
+    "item3_tag": "Sensitive Scalp · 3 Weeks",
+    "item1_text_full": "\"After two weeks, my scalp is much less oily. Used to get greasy by noon, now it lasts all day.\"",
+    "item1_author_full": "Ms. Zhang",
+    "item2_text_full": "\"Had dandruff for years. After half a month using this soap, it's significantly reduced.\"",
+    "item2_author_full": "Mr. Li",
+    "item3_text_full": "\"My scalp became sensitive after pregnancy. This soap feels gentle and safe.\"",
+    "item3_author_full": "Ms. Wang"
   },
   "faq": {
     "title": "FAQ",
@@ -210,7 +263,10 @@
     "form_opt2": "Recurring Dandruff",
     "form_opt3": "Scalp Itching",
     "form_opt4": "Hair Loss",
-    "form_submit": "Submit Inquiry"
+    "form_submit": "Submit Inquiry",
+    "other_label": "Other",
+    "name_placeholder": "Your Name",
+    "phone_placeholder": "Phone/WeChat"
   },
   "trust_bar": {
     "item1": "Gentle Herbal Formula",
@@ -219,7 +275,10 @@
   },
   "footer": {
     "brand": "Miao Ben Fang",
-    "subtitle": "Herbal Scalp Care Specialist"
+    "subtitle": "Herbal Scalp Care Specialist",
+    "link_home": "Home",
+    "link_product": "Products",
+    "link_contact": "Contact"
   },
   "product_line": {
     "title": "Product Line",
@@ -231,7 +290,8 @@
     "more_item1": "✅ Twin Pack (Better Value)",
     "more_item2": "✅ Hair Soap + Trial Set Gift Box",
     "more_item3": "✅ Quarterly / Semi-Annual Care Bundle",
-    "consult_btn": "Inquire About Bundles"
+    "consult_btn": "Inquire About Bundles",
+    "alt": "Miao Ben Fang Hair Soap"
   },
   "core_advantages": {
     "title": "3 Core Advantages — Redefining Scalp Cleansing",
@@ -243,7 +303,11 @@
     "item2_desc": "Low-temperature process preserves maximum herbal potency.",
     "item3_icon": "✅",
     "item3_title": "5 Zero-Additives · Pure & Safe",
-    "item3_desc": "No silicone, SLS, preservatives, sulfates or artificial fragrance. Safe for sensitive scalps."
+    "item3_desc": "No silicone, SLS, preservatives, sulfates or artificial fragrance. Safe for sensitive scalps.",
+    "item1_icon_title": "🌿 Herbal Extract · Gentle Care",
+    "item2_icon_title": "⏳ 45-Day Cold Process · Maximum Actives",
+    "item2_desc_full": "Low-temperature process at <40°C to preserve maximum herbal potency.",
+    "item3_icon_title": "✅ 5 Zero-Additives · Pure & Safe"
   },
   "brand_story": {
     "title": "Miao Wisdom",
@@ -252,7 +316,8 @@
     "item1": "18 Miao Herbs · Science-Based Formula",
     "item2": "45-Day Cold Process · Preserves Active Ingredients",
     "item3": "5 Zero-Additives · Gentle & Safe",
-    "explore": "Explore 18 Herbs →"
+    "explore": "Explore 18 Herbs →",
+    "alt": "Miao Herbal"
   },
   "seo_article": {
     "breadcrumb_home": "Home",

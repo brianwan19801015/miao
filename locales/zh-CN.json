@@ -47,7 +47,8 @@
     "heritage_item1": "18味苗家草本 · 君臣佐使科学配伍",
     "heritage_item2": "45天低温冷制 · 锁住活性成分",
     "heritage_item3": "5大0添加 · 温和安全不刺激",
-    "explore_link": "探索18味草本 →"
+    "explore_link": "探索18味草本 →",
+    "alt": "苗本芳养发皂"
   },
   "ingredients": {
     "title": "18味草本配伍，回归温和净养",
@@ -59,7 +60,33 @@
     "group3_name": "舒缓清洁",
     "group3_herbs": "艾叶、苦参、蛇床子、地肤子、薄荷",
     "group4_name": "活络疏通",
-    "group4_herbs": "丹参、川芎、透骨草、骨碎补、桑叶、榆皮"
+    "group4_herbs": "丹参、川芎、透骨草、骨碎补、桑叶、榆皮",
+    "group1_alt": "养发根基",
+    "group2_alt": "控油净澈",
+    "group3_alt": "舒缓清洁",
+    "group4_alt": "活络疏通",
+    "herb_goutouwu": "何首乌",
+    "herb_sangshen": "桑葚",
+    "herb_mohanlian": "墨旱莲",
+    "herb_zaojiao": "皂角",
+    "herb_wuhuanzi": "无患子",
+    "herb_cebaiye": "侧柏叶",
+    "herb_chaku": "茶枯",
+    "herb_aiye": "艾叶",
+    "herb_kushen": "苦参",
+    "herb_shechuangzi": "蛇床子",
+    "herb_difuzi": "地肤子",
+    "herb_bohe": "薄荷",
+    "herb_danshen": "丹参",
+    "herb_chuanxiong": "川芎",
+    "herb_tougucao": "透骨草",
+    "herb_gusubu": "骨碎补",
+    "herb_sangye": "桑叶",
+    "herb_yupi": "榆皮",
+    "group1_icon_title": "🌱 养发根基",
+    "group2_icon_title": "💧 控油净澈",
+    "group3_icon_title": "🌿 舒缓清洁",
+    "group4_icon_title": "🔄 活络疏通"
   },
   "technology": {
     "title": "三大核心优势，重新定义头皮清洁",
@@ -84,7 +111,12 @@
     "zero_item5_name": "0人工香精",
     "zero_item5_desc": "只保留植物草本萃取的自然清香，无人工合成香料的刺鼻感。",
     "cold_label1": "破坏锁住草本活性",
-    "cold_label2": "自然周期皂化"
+    "cold_label2": "自然周期皂化",
+    "zero_item1_name_label": "0 硅油",
+    "zero_item2_name_label": "0 月桂醇",
+    "zero_item3_name_label": "0 防腐剂",
+    "zero_item4_name_label": "0 硫酸盐",
+    "zero_item5_name_label": "0 人工香精"
   },
   "zero_add": {
     "title": "5大0添加，给头皮最纯净的呵护",
@@ -97,7 +129,12 @@
     "item4_name": "0硫酸盐",
     "item4_desc": "摒弃强刺激清洁成分，配方温和亲肤，敏感肌也能放心用。",
     "item5_name": "0人工香精",
-    "item5_desc": "只保留植物草本萃取的自然清香，无人工合成香料的刺鼻感。"
+    "item5_desc": "只保留植物草本萃取的自然清香，无人工合成香料的刺鼻感。",
+    "item1_name_alt": "0硅油",
+    "item2_name_alt": "0月桂醇",
+    "item3_name_alt": "0防腐剂",
+    "item4_name_alt": "0硫酸盐",
+    "item5_name_alt": "0人工香精"
   },
   "why_us": {
     "title": "为什么选择苗本芳养发皂？",
@@ -138,7 +175,11 @@
     "item4_label": "防断发功效",
     "item4_title": "强韧固发",
     "item4_desc": "改善发丝脆弱，降低断裂与拉扯损伤。",
-    "item4_report": "报告编号：XYJCR260328-111"
+    "item4_report": "报告编号：XYJCR260328-111",
+    "item1_icon_label": "🧴 去屑功效",
+    "item2_icon_label": "💧 控油功效",
+    "item3_icon_label": "🌿 滋养功效",
+    "item4_icon_label": "🛡️ 防断发功效"
   },
   "gifts": {
     "title": "买就送，赠品价值超百元！",
@@ -151,7 +192,10 @@
     "item2_desc": "双层镂空沥水设计，有效保持皂体干燥清爽，延长手工皂使用寿命。",
     "item3_name": "气垫按摩梳",
     "item3_tier": "（购买三盒赠送价值）",
-    "item3_desc": "高弹性气囊梳齿，温柔贴合头皮，有效缓解疲劳，促进头部血液循环。"
+    "item3_desc": "高弹性气囊梳齿，温柔贴合头皮，有效缓解疲劳，促进头部血液循环。",
+    "item1_alt": "起泡网",
+    "item2_alt": "沥水皂盒",
+    "item3_alt": "气垫按摩梳"
   },
   "how_to_use": {
     "title": "三步轻松养发，懒人也能坚持",
@@ -160,7 +204,10 @@
     "step2_title": "按摩",
     "step2_desc": "泡沫抹在头皮和头发上，指腹打圈按摩3-5分钟。",
     "step3_title": "冲净",
-    "step3_desc": "用温水把泡沫彻底冲干净，头皮清爽无残留。"
+    "step3_desc": "用温水把泡沫彻底冲干净，头皮清爽无残留。",
+    "step1_icon_title": "搓泡",
+    "step2_icon_title": "按摩",
+    "step3_icon_title": "冲净"
   },
   "massage_tips": {
     "title": "正确按摩，效果加倍",
@@ -182,7 +229,13 @@
     "item2_tag": "头屑问题 · 使用2个月",
     "item3_text": "怀孕后头皮变得敏感，这款皂没有香精味，洗着很安心，不刺激。",
     "item3_author": "王女士",
-    "item3_tag": "敏感头皮 · 使用3周"
+    "item3_tag": "敏感头皮 · 使用3周",
+    "item1_text_full": "\"用了两周，头皮出油明显少了，以前上午洗下午就塌，现在能撑一整天。\"",
+    "item1_author_full": "张女士",
+    "item2_text_full": "\"头屑困扰好几年了，这块皂洗了半个月头屑少了很多，肩膀终于干净了。\"",
+    "item2_author_full": "李先生",
+    "item3_text_full": "\"怀孕后头皮变得敏感，这款皂没有香精味，洗着很安心，不刺激。\"",
+    "item3_author_full": "王女士"
   },
   "faq": {
     "title": "常见问题",
@@ -210,7 +263,10 @@
     "form_opt2": "头屑反复",
     "form_opt3": "头皮发痒",
     "form_opt4": "掉发焦虑",
-    "form_submit": "提交咨询"
+    "form_submit": "提交咨询",
+    "other_label": "其他",
+    "name_placeholder": "您的姓名",
+    "phone_placeholder": "手机号/微信号"
   },
   "trust_bar": {
     "item1": "草本温和配方",
@@ -219,7 +275,10 @@
   },
   "footer": {
     "brand": "苗本芳",
-    "subtitle": "专注头皮净养的草本品牌"
+    "subtitle": "专注头皮净养的草本品牌",
+    "link_home": "首页",
+    "link_product": "产品",
+    "link_contact": "联系"
   },
   "product_line": {
     "title": "产品系列",
@@ -231,7 +290,8 @@
     "more_item1": "✅ 养发皂双块组合（更实惠）",
     "more_item2": "✅ 养发皂+体验装礼盒",
     "more_item3": "✅ 季度/半年护理套装",
-    "consult_btn": "咨询更多组合"
+    "consult_btn": "咨询更多组合",
+    "alt": "苗本芳养发皂"
   },
   "core_advantages": {
     "title": "三大核心优势，重新定义头皮清洁",
@@ -243,7 +303,11 @@
     "item2_desc": "低温冷制工艺，最大程度保留草本活性成分。",
     "item3_icon": "✅",
     "item3_title": "5大0添加 · 纯净安心",
-    "item3_desc": "0硅油、0月桂醇、0防腐剂、0硫酸盐、0人工香精，敏感头皮也能放心使用。"
+    "item3_desc": "0硅油、0月桂醇、0防腐剂、0硫酸盐、0人工香精，敏感头皮也能放心使用。",
+    "item1_icon_title": "🌿 草本植萃 · 温和净养",
+    "item2_icon_title": "⏳ 45天冷制 · 锁住活性",
+    "item2_desc_full": "低温冷制工艺，<40℃恒温入模，最大程度保留草本活性成分不流失。",
+    "item3_icon_title": "✅ 5大0添加 · 纯净安心"
   },
   "brand_story": {
     "title": "苗家智慧",
@@ -252,7 +316,8 @@
     "item1": "18味苗家草本 · 君臣佐使科学配伍",
     "item2": "45天低温冷制 · 锁住活性成分",
     "item3": "5大0添加 · 温和安全不刺激",
-    "explore": "探索18味草本 →"
+    "explore": "探索18味草本 →",
+    "alt": "苗家草本"
   },
   "seo_article": {
     "breadcrumb_home": "首页",
