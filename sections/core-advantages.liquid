@@ -17,34 +17,6 @@
     </div>
   </div>
 </section>
-
-<style>
-.core-advantages { padding: 100px 0; position: relative; }
-.core-advantages::before {
-  content: ''; position: absolute; inset: 0;
-  background: rgba(0,0,0,0.5); z-index: 1;
-}
-.core-advantages .container { position: relative; z-index: 2; }
-.core-advantages .section-title { color: #fff; }
-.advantages-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-  margin-top: 40px;
-}
-.advantage-card {
-  background: rgba(255,255,255,0.95);
-  border-radius: 16px;
-  padding: 36px 28px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s;
-}
-.advantage-card:hover { transform: translateY(-4px); }
-.advantage-card h3 { font-size: 20px; color: var(--brand-dark); margin-bottom: 12px; }
-.advantage-card p { font-size: var(--body-small); color: var(--text-secondary); line-height: 1.7; }
-</style>
-
 {% schema %}
 {
   "name": "Core Advantages",

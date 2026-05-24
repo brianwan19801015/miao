@@ -30,41 +30,6 @@
     </div>
   </div>
 </section>
-
-<style>
-.zero-add { padding: 100px 0; position: relative; }
-.zero-add::before {
-  content: ''; position: absolute; inset: 0;
-  background: rgba(0,0,0,0.55); z-index: 1;
-}
-.zero-add .container { position: relative; z-index: 2; }
-.zero-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
-  margin-top: 40px;
-}
-.zero-card {
-  background: white;
-  border-radius: 16px;
-  padding: 32px 24px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  transition: transform 0.3s;
-}
-.zero-card:hover { transform: translateY(-4px); }
-.zero-icon {
-  width: 64px; height: 64px;
-  margin: 0 auto 16px;
-  background: #4a7c3f;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  color: white; font-size: 24px;
-}
-.zero-card h3 { font-size: 18px; margin-bottom: 12px; color: var(--brand-dark); }
-.zero-card p { font-size: var(--body-small); color: var(--text-secondary); line-height: 1.6; }
-</style>
-
 {% schema %}
 {
   "name": "Zero Additives",

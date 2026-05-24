@@ -23,34 +23,4 @@
     </div>
   </div>
 </section>
-
-<style>
-.how-to-use { padding: 80px 0; background: #f8f9f0; }
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 28px;
-}
-.step-card {
-  background: white;
-  border-radius: 20px;
-  padding: 36px 24px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  transition: transform 0.3s;
-}
-.step-card:hover { transform: translateY(-4px); }
-.step-img { margin-bottom: 16px; }
-.step-img img { width: 160px; height: 160px; border-radius: 16px; object-fit: cover; }
-.step-number {
-  font-size: 36px;
-  font-weight: 800;
-  color: var(--brand);
-  opacity: 0.3;
-  margin-bottom: 8px;
-}
-.step-card h3 { font-size: 20px; color: var(--brand-dark); margin-bottom: 8px; }
-.step-card p { font-size: var(--body-small); color: var(--text-secondary); line-height: 1.7; }
-</style>
-
 {% schema %}{"name":"How To Use","settings":[],"presets":[{"name":"How To Use"}]}{% endschema %}
