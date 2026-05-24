@@ -45,12 +45,7 @@
   }
 
   // ===================== FAQ 手风琴 =====================
-  document.querySelectorAll('.faq-question').forEach(function (q) {
-    q.addEventListener('click', function () {
-      var item = this.parentElement;
-      item.classList.toggle('active');
-    });
-  });
+  // (已迁移至faq.liquid内联onclick)
 
   // ===================== 数字动画计数 =====================
   function animateCounter(el) {

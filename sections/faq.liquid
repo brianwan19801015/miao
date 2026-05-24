@@ -3,37 +3,38 @@
     <h2 class="section-title">常见问题</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-question">养发皂适合什么发质？<span class="faq-toggle"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          养发皂适合什么发质？<span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+        </div>
         <div class="faq-answer">适合各种发质，尤其推荐油性头皮、头屑反复、头皮瘙痒及掉发困扰人群使用。敏感头皮同样适用。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">多久能看到效果？<span class="faq-toggle"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          多久能看到效果？<span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+        </div>
         <div class="faq-answer">一般连续使用2-4周可见头皮出油减少、头屑改善。长期使用（1-3个月）效果更稳定。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">每天都可以用吗？<span class="faq-toggle"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          每天都可以用吗？<span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+        </div>
         <div class="faq-answer">油性头皮可隔天使用，中性或干性头皮建议每周2-3次。根据自身头皮状态调整频率即可。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">孕妇可以用吗？<span class="faq-toggle"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          孕妇可以用吗？<span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+        </div>
         <div class="faq-answer">本产品0硅油、0月桂醇、0防腐剂、0硫酸盐、0人工香精，配方温和。建议使用前咨询客服获取详细成分信息。</div>
       </div>
       <div class="faq-item">
-        <div class="faq-question">如何保存养发皂？<span class="faq-toggle"><i class="fas fa-chevron-down"></i></span></div>
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          如何保存养发皂？<span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+        </div>
         <div class="faq-answer">请置于干燥通风处保存，使用后放在沥水皂托上，避免长时间泡水可延长使用寿命。</div>
       </div>
     </div>
   </div>
 </section>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.faq-question').forEach(function(q) {
-    q.addEventListener('click', function() {
-      this.parentElement.classList.toggle('active');
-    });
-  });
-});
-</script>
 
 {% schema %}
 {
