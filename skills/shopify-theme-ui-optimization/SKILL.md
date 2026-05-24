@@ -1,22 +1,23 @@
 ---
 name: shopify-theme-ui-optimization
-description: "Shopify主题UI优化技能合集。涵盖从PPT产品内容同步、现代UI设计系统搭建、交互动效实现到CI/CD部署的全流程。适用于苗本芳养发皂等Shopify主题网站的视觉升级。"
+description: "Shopify主题UI优化技能合集。涵盖从PPT产品内容同步、现代UI设计系统搭建、字体排版系统统一、交互动效实现到CI/CD部署的全流程。适用于苗本芳养发皂等Shopify主题网站的视觉升级。"
 ---
 
 # Shopify 主题 UI 优化 Skill
 
 ## 概述
 
-本 skill 包含将产品介绍PPT内容同步到Shopify网站、重构UI设计系统、添加交互动效、以及通过GitHub Actions自动部署的完整流程。
+本 skill 包含将产品介绍PPT内容同步到Shopify网站、重构UI设计系统、统一字体排版、添加交互动效、以及通过GitHub Actions自动部署的完整流程。
 
 ## 目录
 
 1. [PPT内容同步](#1-ppt内容同步)
 2. [现代UI设计系统](#2-现代ui设计系统)
-3. [交互动效](#3-交互动效)
-4. [关键Section模板](#4-关键section模板)
-5. [部署流程](#5-部署流程)
-6. [客户准备工作清单](#6-客户准备工作清单)
+3. [字体排版系统](#3-字体排版系统)
+4. [交互动效](#4-交互动效)
+5. [关键Section模板](#5-关键section模板)
+6. [部署流程](#6-部署流程)
+7. [常见排版问题与修复](#7-常见排版问题与修复)
 
 ---
 
@@ -28,44 +29,17 @@ description: "Shopify主题UI优化技能合集。涵盖从PPT产品内容同步
 |:-------:|------|---------------------|
 | 第1页 | 封面/Hero | `hero.liquid` |
 | 第2页 | 痛点 | `pain-points.liquid` |
-| 第3页 | 产品定位/品牌故事 | `product-intro.liquid` + `brand-story.liquid` |
-| **第4页** | **18味草本配伍** | **`ingredients.liquid`** |
-| 第5页 | 45天古法冷制 | `technology.liquid` |
-| 第6页 | 5大0添加 | `zero-add.liquid` |
-| 第7-8页 | 核心优势 | `core-advantages.liquid` |
-| 第9页 | 功效 | `effects.liquid` |
-| **第10页** | **赠品** | **`gifts.liquid`** |
+| 第3页 | 产品定位/品牌故事/苗家智慧传承 | `product-intro.liquid` + `brand-story.liquid` |
+| 第4页 | 18味草本配伍 | `ingredients.liquid` |
+| 第5页 | 45天古法冷制锁活 | `technology.liquid`（上半部分） |
+| 第6页 | 5大0添加 | `technology.liquid`（下半部分） |
+| 第7-8页 | 三大核心优势 | `core-advantages.liquid` |
+| 第9页 | 四大功效+权威认证 | `effects.liquid` |
+| 第10页 | 赠品 | `product-line.liquid` |
 | 第11页 | 产品线 | `product-line.liquid` |
 | 第12页 | 使用教程 | `how-to-use.liquid` + `massage-tips.liquid` |
 
-### 18味草本配伍排版规范（PPT第4页）
-
-4栏并列布局，每栏：圆形图片 + 标题 + 草本标签。
-
-| 栏目 | 图片主题 | 草本内容 | 味数 |
-|------|---------|---------|:---:|
-| 🌱 养发根基 | 叶子+树根 | 何首乌、桑葚、墨旱莲 | 3味 |
-| 💧 控油净澈 | 水滴/清洁 | 皂角、无患子、侧柏叶、茶枯 | 4味 |
-| 🌿 舒缓清洁 | 叶子/草药 | 艾叶、苦参、蛇床子、地肤子、薄荷 | 5味 |
-| 🔄 活络疏通 | 脉络/疏通 | 丹参、川芎、透骨草、骨碎补、桑叶、榆皮 | 6味 |
-
-**约束：**
-- 养发根基只有3味（何首乌、桑葚、墨旱莲），**不包含侧柏叶**
-- 侧柏叶属于控油净澈
-- 总计 3+4+5+6 = **18味**
-- 四栏样式必须统一（统一使用 herb-tags 标签样式）
-
-### 赠品排版规范（PPT第10页）
-
-3栏并列布局，每栏：圆形图片 + 赠品名称 + 赠送条件 + 描述。
-
-| 赠品 | 条件 | 图片文件 |
-|------|------|---------|
-| 起泡网 | 每盒 | `slide10_gift_bubble_net.png` |
-| 沥水皂盒 | 购买两盒赠送 | `slide10_gift_drain_box.png` |
-| 气垫按摩梳 | 购买三盒赠送价值 | `slide10_gift_air_cushion_comb.png` |
-
-**注意：** 图片文件名不要使用中文，否则 Shopify asset_url 可能解析失败。
+详细内容规范见 `ppt-to-shopify` skill。
 
 ---
 
@@ -81,26 +55,30 @@ description: "Shopify主题UI优化技能合集。涵盖从PPT产品内容同步
   --brand-dark: #22543d;
   --brand-subtle: #f0fff4;
   --accent: #d69e2e;
-  
+  --accent-light: #fefcbf;
+
   /* 中性色 */
   --bg: #fafaf9;
   --bg-warm: #f5f0eb;
   --card: #ffffff;
   --text: #1a1a2e;
   --text-secondary: #6b7280;
-  
+  --text-muted: #9ca3af;
+  --line: #e5e7eb;
+  --line-light: #f3f4f6;
+
   /* 圆角 */
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-xl: 32px;
   --radius-full: 9999px;
-  
+
   /* 阴影 */
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
   --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
-  
+
   /* 过渡 */
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -120,18 +98,107 @@ description: "Shopify主题UI优化技能合集。涵盖从PPT产品内容同步
 <a href="#" class="btn btn-white">咨询购买</a>
 ```
 
-### 响应式断点
+### SEO文章页面模板
 
-| 断点 | 适用 | 列数变化 |
-|------|------|---------|
-| >1024px | 桌面 | 4列 → 4列 |
-| 768-1024px | 小平板 | 4列 → 2列 |
-| 480-768px | 手机横屏 | 2列 → 1列 |
-| <480px | 手机竖屏 | 保持1列 |
+新增 `page.seo-article` 模板用于发布SEO博客文章：
+
+```
+templates/page.seo-article.liquid  →  仅引用 sections/seo-article.liquid
+```
+
+页面在 Shopify 中通过 `https://店铺/pages/seo-article` 访问。
+
+SEO文章页在layout中做了特殊处理：
+- 动态title/description：`{{ page.title }}` / `{{ page.meta_description }}`
+- 隐藏全局的 testimonials 和 faq（文章内自带Q&A）
 
 ---
 
-## 3. 交互动效
+## 3. 字体排版系统
+
+### CSS变量定义
+
+```css
+:root {
+  /* 标题层级 */
+  --h1-size: clamp(32px, 4vw, 46px);
+  --h2-size: clamp(24px, 3vw, 34px);
+  --h3-size: 20px;
+  --h4-size: 17px;
+
+  /* 正文 */
+  --body-size: 15px;
+  --body-small: 14px;
+  --body-xs: 13px;
+  --caption-size: 12px;
+
+  /* 行高 */
+  --lh-tight: 1.2;
+  --lh-normal: 1.6;
+  --lh-loose: 1.8;
+
+  /* 字重 */
+  --fw-bold: 700;
+  --fw-semibold: 600;
+  --fw-medium: 500;
+  --fw-normal: 400;
+}
+```
+
+### Section通用样式
+
+```css
+.section-title {
+  font-size: var(--h2-size);
+  font-weight: 800;
+  line-height: var(--lh-tight);
+  color: var(--brand-dark);
+}
+.section-title.center { text-align: center; }
+
+.section-desc {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  max-width: 640px;
+  line-height: var(--lh-normal);
+}
+.section-desc.center { text-align: center; }
+```
+
+### 元素层级规范
+
+| 元素 | CSS变量 | 适用场景 |
+|------|---------|---------|
+| 页面标题 (h1) | `--h1-size` | Hero标题 |
+| Section标题 (h2) | `--h2-size` | 各section主标题 |
+| 卡片标题 (h3) | `--h3-size` | 功效卡片、草本分类 |
+| 子标题/小卡片标题 (h4) | `--h4-size` | 零添加单项、底部列表标题 |
+| 正文 | `--body-size` | 主要段落文字 |
+| 辅助正文 | `--body-small` | 卡片描述、FAQ回答 |
+| 标注文字 | `--body-xs` | 统计标签、认证徽章 |
+| 极小文字 | `--caption-size` | 报告编号、badge标签 |
+
+### 颜色映射
+
+| 用途 | CSS变量 | 硬编码对照 |
+|------|---------|-----------|
+| 深绿色标题/品牌色 | `var(--brand-dark)` | `#22543d` / `#2d4a2a` |
+| 绿色强调/品牌色 | `var(--brand)` | `#4a7c3f` / `#2f855a` |
+| 正文/标题 | `var(--text)` | `#1a1a2e` / `#333` |
+| 辅助文字 | `var(--text-secondary)` | `#6b7280` / `#555` / `#666` |
+| 弱化文字 | `var(--text-muted)` | `#9ca3af` / `#888` |
+
+### 例外情况（保留硬编码）
+
+以下场景不使用CSS变量（设计特征）：
+- 统计数字（如 `<40℃`、`0`、`45天`）→ 28px 大号
+- VS对比标识 → 24px 
+- 星级评分 → 18px
+- emoji/图标 → 36-48px
+
+---
+
+## 4. 交互动效
 
 ### 滚动入场动画
 
@@ -139,33 +206,6 @@ description: "Shopify主题UI优化技能合集。涵盖从PPT产品内容同步
 
 ```html
 <div class="herb-category animate-on-scroll">...</div>
-```
-
-CSS实现：
-
-```css
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-```
-
-JS实现（Intersection Observer）：
-
-```javascript
-var observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
 ```
 
 ### 卡片悬停效果
@@ -177,27 +217,6 @@ var observer = new IntersectionObserver(function(entries) {
 .card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
-}
-```
-
-### 数字计数动画
-
-HTML：
-```html
-<div class="hero-stat-number" data-target="18">0</div>
-```
-
-JS：
-```javascript
-function animateCounter(el) {
-  var target = parseInt(el.getAttribute('data-target'), 10);
-  var current = 0;
-  var step = Math.ceil(target / 60);
-  var timer = setInterval(function() {
-    current += step;
-    if (current >= target) { current = target; clearInterval(timer); }
-    el.textContent = current;
-  }, 20);
 }
 ```
 
@@ -215,95 +234,23 @@ function animateCounter(el) {
 </div>
 ```
 
-```css
-.faq-item.active .faq-question i { transform: rotate(180deg); }
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height var(--transition);
-}
-.faq-item.active .faq-answer {
-  max-height: 300px;
-  padding: 0 24px 20px;
-}
+```javascript
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    this.parentElement.classList.toggle('active');
+  });
+});
 ```
 
 ---
 
-## 4. 关键Section模板
+## 5. 关键Section模板
 
-### Hero Section
-
-```liquid
-<section class="hero" id="hero">
-  <div class="hero-slide" style="background-image: url('{{ 'slide1_img0_0.png' | asset_url }}');">
-    <div class="container hero-content">
-      <span class="hero-badge">🌿 源自苗家古方 · 科学配伍</span>
-      <h1>品牌名<span>产品名</span></h1>
-      <p>卖点文案...</p>
-      <div class="hero-btns">
-        <a href="#ingredients" class="btn btn-primary btn-lg">主按钮</a>
-        <a href="#contact" class="btn btn-white btn-lg">次按钮</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-number" data-target="18">0</div>
-          <div class="hero-stat-label">统计项</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-```
-
-### Ingredients Section（18味草本）
-
-```liquid
-<section class="ingredients" id="ingredients">
-  <div class="container">
-    <h2 class="section-title center">18味草本配伍，回归温和净养</h2>
-    <p class="section-desc center">源自《苗族医药学》18味苗家古方 · 科学配伍</p>
-    
-    <div class="herb-categories">
-      <!-- 4个 herb-category，每个带 animate-on-scroll -->
-      <div class="herb-category animate-on-scroll">
-        <div class="herb-img">
-          <img src="{{ 'slide4_imgXX.png' | asset_url }}" alt="分类名">
-        </div>
-        <h3 class="category-title">🌱 分类名</h3>
-        <div class="herb-tags">
-          <span class="herb-tag">草本1</span>
-          <span class="herb-tag">草本2</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-```
-
-### Gifts Section（赠品）
-
-```liquid
-<section class="gifts" id="gifts">
-  <div class="container">
-    <h2 class="section-title">买就送，赠品价值超百元！</h2>
-    
-    <div class="gift-grid">
-      <div class="gift-card animate-on-scroll">
-        <div class="gift-img">
-          <img src="{{ 'slide10_gift_xxx.png' | asset_url }}" alt="赠品名">
-        </div>
-        <h3 class="gift-name">赠品名 <span class="gift-condition">（条件）</span></h3>
-        <p class="gift-desc">描述文案...</p>
-      </div>
-    </div>
-  </div>
-</section>
-```
+（详见 ppt-to-shopify skill）
 
 ---
 
-## 5. 部署流程
+## 6. 部署流程
 
 ### GitHub Secrets 配置
 
@@ -321,6 +268,8 @@ git commit -m "type: description"
 git push origin master
 ```
 
+GitHub Actions 自动执行 `deploy-shopify.yml` 部署到 Shopify。
+
 ### 图片命名规范
 
 - 不使用中文字符，统一使用英文
@@ -329,18 +278,61 @@ git push origin master
 
 ---
 
-## 6. 客户准备工作清单
+## 7. 常见排版问题与修复
 
-客户需提供以下资料才能部署此系统：
+### 问题1：FAQ/testimonials 重复显示
 
-1. **GitHub 账号** — 注册 github.com
-2. **GitHub 仓库** — 创建仓库存放主题代码
-3. **Shopify 商店域名** — 形如 yourstore.myshopify.com
-4. **Theme Access 密码** — 从 Shopify Theme Access 应用生成（shptka_...）
-5. **Shopify 主题 ID** — 首次部署后获取
-6. **产品资料（可选）** — PPT、图片、文案等
+**症状：** FAQ或用户评价在页面上出现两次。
 
-详细清单见 `docs/Shopify主题自动部署系统-客户准备工作清单.docx`
+**原因：** layout中全局`{% section 'faq' %}` + 页面模板中也引用了同一section。
+
+**修复：** 移除layout中的全局渲染，由各页面模板自行控制。
+
+```liquid
+<!-- layout/theme.liquid -->
+{{ content_for_layout }}
+<!-- 移除以下两行 -->
+{% section 'testimonials' %}
+{% section 'faq' %}
+```
+
+### 问题2：内联style覆盖全局样式
+
+**症状：** section内的样式与全局style.css冲突。
+
+**修复：** 不移除内联style（Shopify section自带），但要确保全局style.css优先级通过 `!important` 或更具体的选择器控制。
+
+### 问题3：标题缺少 center 类
+
+**症状：** section标题没有居中显示。
+
+**修复：** 在需要居中的标题上加 `center` 类。
+
+```liquid
+<h2 class="section-title center">标题</h2>
+<p class="section-desc center">描述</p>
+```
+
+### 问题4：图片文件名为中文
+
+**症状：** 图片不显示。
+
+**修复：** 全部使用英文文件名。
+
+### 问题5：字体排版不一致
+
+**症状：** 各section标题大小、颜色、行高不统一。
+
+**修复：** 使用排版系统CSS变量（见第3节），确保所有section引用同一套变量。
+
+检查命令：
+```bash
+# 检查是否还有硬编码的font-size
+grep -rn "font-size:" sections/ | grep -v "var(--" | grep -v "@media"
+
+# 检查是否还有硬编码的颜色
+grep -rn "#555\|#666\|#333" sections/ | grep -v "background\|border"
+```
 
 ---
 
@@ -349,31 +341,40 @@ git push origin master
 ```
 miao/
 ├── assets/
-│   ├── style.css              # 主样式表
+│   ├── style.css              # 主样式表（含排版变量）
 │   ├── main.js                # 主JS（动画、交互）
-│   ├── slide1_img0_0.png      # Hero背景
-│   ├── slide4_img11_14.png    # 养发根基图标
-│   ├── slide4_img12_15.png    # 控油净澈图标
-│   ├── slide4_img13_16.png    # 舒缓清洁图标
-│   ├── slide4_img14_17.png    # 活络疏通图标
-│   ├── slide10_gift_bubble_net.png       # 起泡网
-│   ├── slide10_gift_drain_box.png        # 沥水皂盒
-│   └── slide10_gift_air_cushion_comb.png # 气垫按摩梳
+│   └── slide*.png/jpg         # 图片资源
 ├── sections/
 │   ├── hero.liquid
 │   ├── pain-points.liquid
+│   ├── product-intro.liquid   # 含底部传承区域
+│   ├── brand-story.liquid
 │   ├── ingredients.liquid     # 18味草本
-│   ├── gifts.liquid           # 赠品
-│   └── ...
+│   ├── technology.liquid      # 45天冷制 + 5大0添加
+│   ├── core-advantages.liquid
+│   ├── effects.liquid         # 四大功效 + 权威认证
+│   ├── how-to-use.liquid
+│   ├── massage-tips.liquid
+│   ├── product-line.liquid
+│   ├── testimonials.liquid
+│   ├── faq.liquid
+│   ├── seo-article.liquid     # SEO博客文章
+│   ├── why-us.liquid
+│   ├── contact.liquid
+│   ├── trust-bar.liquid
+│   ├── header.liquid
+│   └── footer.liquid
 ├── layout/
 │   └── theme.liquid
 ├── templates/
-│   └── index.json
+│   ├── index.json
+│   └── page.seo-article.liquid
 ├── config/
 │   └── settings_schema.json
 ├── skills/
+│   ├── ppt-to-shopify/        # PPT同步skill
 │   ├── shopify-theme-cicd/    # CI/CD部署skill
-│   └── ppt-to-shopify/        # PPT同步skill
+│   └── shopify-theme-ui-optimization/
 ├── docs/
 │   └── Shopify主题自动部署系统-客户准备工作清单.docx
 └── .github/
@@ -384,114 +385,3 @@ miao/
 ---
 
 > 本 skill 基于苗本芳养发皂项目实践总结，适用于Shopify主题网站的UI优化与自动化部署。
-
----
-
-## 7. 常见排版问题与修复
-
-### 问题1：内联style覆盖全局样式
-
-**症状：** section内的样式与全局style.css冲突，导致排版错乱（标题不居中、颜色不对等）。
-
-**原因：** Liquid section文件中含有独立的 `<style>` 标签，优先级高于全局style.css。
-
-**修复：** 移除section内的内联style，所有样式统一放在 `assets/style.css` 中管理。
-
-```liquid
-<!-- ❌ 错误：section内嵌style -->
-<section class="ingredients" id="ingredients">
-  ...
-</section>
-<style>
-  .ingredients { padding: 80px 0; background: #f8f9f0; }  /* 和全局冲突！ */
-</style>
-
-<!-- ✅ 正确：只保留HTML结构，样式统一在style.css -->
-<section class="ingredients" id="ingredients">
-  ...
-</section>
-<!-- 无内联style -->
-```
-
-### 问题2：标题缺少 center 类
-
-**症状：** section标题（section-title）没有居中显示。
-
-**原因：** style.css中 `.section-title` 默认左对齐，需要添加 `.center` 类才居中：
-
-```css
-.section-title.center { text-align: center; }
-```
-
-**修复：** 在需要居中的标题上加 `center` 类。
-
-```liquid
-<!-- ❌ 错误 -->
-<h2 class="section-title">18味草本配伍</h2>
-
-<!-- ✅ 正确 -->
-<h2 class="section-title center">18味草本配伍</h2>
-```
-
-### 问题3：图片文件名为中文导致加载失败
-
-**症状：** 图片在Shopify页面上不显示。
-
-**原因：** Shopify的 `asset_url` 过滤器对中文字符的文件名解析不稳定。
-
-**修复：** 图片文件全部使用英文字母命名，不用中文。
-
-```liquid
-<!-- ❌ 错误 -->
-<img src="{{ 'slide10_gift_起泡网.png' | asset_url }}">
-
-<!-- ✅ 正确 -->
-<img src="{{ 'slide10_gift_bubble_net.png' | asset_url }}">
-```
-
-### 问题4：内联style未随全局更新同步
-
-**症状：** 修改了style.css但某些section外观没变。
-
-**原因：** 这些section有自己的 `<style>` 块，不继承全局样式更新。
-
-**修复建议：**
-1. 将所有样式统一迁移到 `assets/style.css`
-2. 删除所有section文件中的 `<style>...</style>` 块
-3. 提交前用以下命令检查残留内联style：
-
-```bash
-for f in sections/*.liquid; do
-  has=$(grep -c "<style>" "$f" 2>/dev/null)
-  if [ "$has" -gt 0 ]; then
-    echo "含内联style: $f"
-  fi
-done
-```
-
-### 问题5：响应式布局断点未覆盖
-
-**症状：** 在手机或平板上排版混乱。
-
-**修复：** 确保style.css中覆盖了以下断点：
-
-```css
-@media (max-width: 1024px) { /* 小平板 */ }
-@media (max-width: 768px) { /* 手机横屏 */ }
-@media (max-width: 480px) { /* 手机竖屏 */ }
-```
-
-Grid布局要设置合适的 `grid-template-columns` 变化。
-
----
-
-## 8. 本地检查清单
-
-推送前逐一检查：
-
-- [ ] 所有section文件无内联 `<style>` 块
-- [ ] 居中标题加了 `center` 类
-- [ ] 居中描述加了 `center` 类
-- [ ] 图片文件名为英文，无中文字符
-- [ ] 确保 `style.css` 和 `main.js` 已更新
-- [ ] 执行 `git add -A && git commit && git push`
