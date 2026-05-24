@@ -1,6 +1,6 @@
 <section class="technology" id="technology">
   <div class="container">
-    <h2 class="section-title">核心科技：低温冷制 + 精简配方</h2>
+    <h2 class="section-title">三大核心优势，重新定义头皮清洁</h2>
     
     <div class="tech-compare">
       <div class="compare-card compare-old">
@@ -34,12 +34,39 @@
       </div>
     </div>
     
-    <div class="tech-block reverse">
-      <div class="tech-image"><img src="{{ 'slide6_img0_26.png' | asset_url }}" alt="精简配方"></div>
-      <div class="tech-text">
+    <div class="zero-add-section">
+      <div class="zero-add-header">
         <span class="badge">CORE TECHNOLOGY 02</span>
-        <h3>精简刺激性成分</h3>
-        <p>不依赖强刺激添加，降低头皮负担，长期使用更友好。</p>
+        <h3>核心卖点三：5大0添加，给头皮最纯净的呵护</h3>
+        <p class="zero-add-sub">摒弃化学添加，回归草本本真，敏感肌也能安心用</p>
+      </div>
+      
+      <div class="zero-add-grid">
+        <div class="zero-add-item">
+          <div class="zero-add-icon">🚫</div>
+          <h4>0 硅油</h4>
+          <p>告别发丝假滑感，让毛囊自由呼吸，回归自然状态。</p>
+        </div>
+        <div class="zero-add-item">
+          <div class="zero-add-icon">🚫</div>
+          <h4>0 月桂醇</h4>
+          <p>避免过度清洁破坏皮脂膜，建立健康的头皮天然保护屏障。</p>
+        </div>
+        <div class="zero-add-item">
+          <div class="zero-add-icon">🚫</div>
+          <h4>0 防腐剂</h4>
+          <p>拒绝添加任何化学防腐剂，从源头降低致敏风险，使用更安心。</p>
+        </div>
+        <div class="zero-add-item">
+          <div class="zero-add-icon">🚫</div>
+          <h4>0 硫酸盐</h4>
+          <p>摒弃强刺激清洁成分，配方温和亲肤，敏感肌也能放心用。</p>
+        </div>
+        <div class="zero-add-item">
+          <div class="zero-add-icon">🚫</div>
+          <h4>0 人工香精</h4>
+          <p>只保留植物草本萃取的自然清香，无人工合成香料的刺鼻感。</p>
+        </div>
       </div>
     </div>
   </div>
@@ -94,6 +121,64 @@
   color: #666;
 }
 .tech-desc { font-size: 14px; color: #666; line-height: 1.7; }
+
+/* 5大0添加 */
+.zero-add-section {
+  margin-top: 60px;
+  padding: 48px 40px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 1px solid #f0f5eb;
+}
+.zero-add-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.zero-add-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2d4a2a;
+  margin: 12px 0 8px;
+}
+.zero-add-sub {
+  font-size: 15px;
+  color: #6b7280;
+  margin: 0;
+}
+.zero-add-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+.zero-add-item {
+  background: #f8faf5;
+  border: 1px solid #e8f0e0;
+  border-radius: 16px;
+  padding: 24px 18px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.zero-add-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+.zero-add-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+.zero-add-item h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #2d4a2a;
+  margin: 0 0 8px;
+}
+.zero-add-item p {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin: 0;
+}
 .tech-compare {
   display: flex;
   align-items: center;
