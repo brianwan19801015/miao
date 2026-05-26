@@ -1998,3 +1998,14 @@ section { padding: 80px 0; position: relative; }
 }
 .zero-card h3 { font-size: 18px; margin-bottom: 12px; color: var(--brand-dark); }
 .zero-card p { font-size: var(--body-small); color: var(--text-secondary); line-height: 1.6; }
+
+/* =====================================================
+   Responsive visibility utilities
+   ===================================================== */
+.only-mobile { display: none; }
+.only-desktop { display: block; }
+
+@media (max-width: 768px) {
+  .only-mobile { display: block; }
+  .only-desktop { display: none; }
+}
