@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ product.title }} - Miao Ben Fang</title>
+  {{ content_for_header }}
+  {{ 'style.css' | asset_url | stylesheet_tag }}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+{% section 'header' %}
+
+<div class="container" style="max-width:1200px; margin:80px auto 40px; padding:0 20px;">
+  <div style="display:flex; flex-wrap:wrap; gap:40px;">
+    <div style="flex:1; min-width:300px;">
+      {% if product.featured_image %}
+        <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}" style="width:100%; border-radius:16px;">
+      {% endif %}
+    </div>
+    <div style="flex:1; min-width:300px;">
+      <h1 style="font-size:28px; margin-bottom:12px;">{{ product.title }}</h1>
+      <p style="font-size:24px; color:#2f855a; font-weight:700; margin-bottom:20px;">{{ product.price | money }}</p>
+      <p style="color:#6b7280; margin-bottom:24px; line-height:1.8;">{{ product.description }}</p>
+
+      {% form 'product', product %}
+        <select name="id" style="display:none;">
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %}selected{% endif %}>
+              {{ variant.title }} - {{ variant.price | money }}
+            </option>
+          {% endfor %}
+        </select>
+        <div style="display:flex; gap:12px; flex-direction:column;">
+          <button type="submit"
+            style="background:#2f855a; color:#fff; border:none; padding:16px 48px; border-radius:8px; font-size:18px; font-weight:700; cursor:pointer;">
+            Add to Cart
+          </button>
+          <a href="/checkout"
+             style="display:block; text-align:center; background:#d69e2e; color:#fff; padding:16px 48px; border-radius:8px; font-size:18px; font-weight:700; text-decoration:none;">
+            Buy It Now
+          </a>
+        </div>
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+{% section 'footer' %}
+{{ 'main.js' | asset_url | script_tag }}
+</body>
+</html>
