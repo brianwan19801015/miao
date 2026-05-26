@@ -1,49 +1,136 @@
 <section class="landing-page">
-  <div class="landing-hero" style="background:linear-gradient(135deg, var(--brand-dark), var(--brand)); color:#fff; padding:100px 20px 60px; text-align:center; border-radius:0 0 var(--radius-xl) var(--radius-xl);">
-    <div class="container" style="max-width:800px; margin:0 auto;">
-      <h1 style="font-size:clamp(28px,5vw,48px); font-weight:700; margin-bottom:20px; color:#fff;">{{ page.title }}</h1>
-      {% if page.metafields.custom.subtitle %}
-        <p style="font-size:20px; opacity:0.9; margin-bottom:32px;">{{ page.metafields.custom.subtitle }}</p>
-      {% endif %}
-      <a href="#contact" style="display:inline-block; background:var(--accent); color:#fff; padding:16px 48px; border-radius:var(--radius-full); font-size:18px; font-weight:700; text-decoration:none;">
-        {{ 'general.consult_now' | t }}
-      </a>
+  <!-- Hero -->
+  <div class="lp-hero" style="background:linear-gradient(135deg, #1a3a2a 0%, #2f855a 100%); color:#fff; padding:clamp(60px,12vh,120px) 20px 60px; text-align:center; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; opacity:0.08; background:radial-gradient(circle at 30% 50%, #fff 0%, transparent 60%);"></div>
+    <div class="container" style="max-width:720px; margin:0 auto; position:relative; z-index:1;">
+      <span style="display:inline-block; background:rgba(255,255,255,0.15); padding:6px 20px; border-radius:var(--radius-full); font-size:14px; margin-bottom:24px; letter-spacing:0.5px;">
+        {{ 'general.hero_badge' | t }}
+      </span>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:800; margin-bottom:16px; line-height:1.2; color:#fff;">
+        {{ page.title }}
+      </h1>
+      <p style="font-size:18px; opacity:0.9; margin-bottom:36px; line-height:1.7; max-width:560px; margin-left:auto; margin-right:auto;">
+        {{ 'general.hero_desc' | t }}
+      </p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a href="#contact" style="background:var(--accent); color:#1a1a2e; padding:16px 40px; border-radius:var(--radius-full); font-size:17px; font-weight:700; text-decoration:none; box-shadow:0 4px 20px rgba(214,158,46,0.4);">
+          {{ 'general.consult_now' | t }} →
+        </a>
+        <a href="#features" style="background:rgba(255,255,255,0.15); color:#fff; padding:16px 40px; border-radius:var(--radius-full); font-size:17px; font-weight:600; text-decoration:none; border:1px solid rgba(255,255,255,0.25);">
+          {{ 'general.explore_herbs' | t }}
+        </a>
+      </div>
     </div>
   </div>
 
-  <div class="container" style="max-width:800px; margin:0 auto; padding:60px 20px;">
-    <div class="landing-content" style="font-size:16px; line-height:2; color:var(--text);">
+  <!-- Trust Bar -->
+  <div style="text-align:center; padding:32px 20px; background:var(--card); border-bottom:1px solid var(--line-light);">
+    <div style="display:flex; justify-content:center; gap:clamp(24px,6vw,64px); flex-wrap:wrap;">
+      <div style="display:flex; align-items:center; gap:10px; font-size:14px; color:var(--text-secondary);">
+        <span style="font-size:20px;">🌿</span> {{ 'general.herbs_count' | t }}
+      </div>
+      <div style="display:flex; align-items:center; gap:10px; font-size:14px; color:var(--text-secondary);">
+        <span style="font-size:20px;">⏳</span> {{ 'general.cold_process' | t }}
+      </div>
+      <div style="display:flex; align-items:center; gap:10px; font-size:14px; color:var(--text-secondary);">
+        <span style="font-size:20px;">✅</span> {{ 'general.zero_add_count' | t }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Content (editable) -->
+  {% if page.content != blank %}
+  <div class="container" style="max-width:780px; margin:0 auto; padding:60px 20px;">
+    <div style="font-size:16px; line-height:2; color:var(--text);">
       {{ page.content }}
     </div>
   </div>
+  {% endif %}
 
-  <div class="container" style="max-width:900px; margin:0 auto; padding:0 20px 60px;">
-    <div class="landing-features" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px;">
-      <div class="landing-card" style="background:var(--card); border-radius:var(--radius-md); padding:32px; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:40px; margin-bottom:16px;">🌿</div>
-        <h3 style="font-size:18px; margin-bottom:8px; color:var(--brand-dark);">18 Miao Herbs</h3>
-        <p style="font-size:14px; color:var(--text-secondary);">Science-based formula from ancient Miao wisdom.</p>
+  <!-- Features Grid -->
+  <div id="features" class="container" style="max-width:960px; margin:0 auto; padding:60px 20px;">
+    <h2 style="text-align:center; font-size:28px; margin-bottom:48px; color:var(--text);">
+      {{ 'core_advantages.title' | t }}
+    </h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px;">
+      <div style="background:var(--card); border-radius:var(--radius-md); padding:36px 28px; text-align:center; border:1px solid var(--line-light); transition:transform 0.2s,box-shadow 0.2s;">
+        <div style="width:64px; height:64px; background:var(--brand-subtle); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-size:28px;">🌿</div>
+        <h3 style="font-size:18px; margin-bottom:10px; color:var(--text);">{{ 'core_advantages.item1_title' | t }}</h3>
+        <p style="font-size:14px; color:var(--text-secondary); line-height:1.7;">{{ 'core_advantages.item1_desc' | t }}</p>
       </div>
-      <div class="landing-card" style="background:var(--card); border-radius:var(--radius-md); padding:32px; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:40px; margin-bottom:16px;">⏳</div>
-        <h3 style="font-size:18px; margin-bottom:8px; color:var(--brand-dark);">45-Day Cold Process</h3>
-        <p style="font-size:14px; color:var(--text-secondary);">Maximum potency preserved through low-temp saponification.</p>
+      <div style="background:var(--card); border-radius:var(--radius-md); padding:36px 28px; text-align:center; border:1px solid var(--line-light); transition:transform 0.2s,box-shadow 0.2s;">
+        <div style="width:64px; height:64px; background:var(--brand-subtle); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-size:28px;">⏳</div>
+        <h3 style="font-size:18px; margin-bottom:10px; color:var(--text);">{{ 'core_advantages.item2_title' | t }}</h3>
+        <p style="font-size:14px; color:var(--text-secondary); line-height:1.7;">{{ 'core_advantages.item2_desc_full' | t }}</p>
       </div>
-      <div class="landing-card" style="background:var(--card); border-radius:var(--radius-md); padding:32px; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="font-size:40px; margin-bottom:16px;">✅</div>
-        <h3 style="font-size:18px; margin-bottom:8px; color:var(--brand-dark);">5 Zero-Additives</h3>
-        <p style="font-size:14px; color:var(--text-secondary);">No silicone, SLS, preservatives, sulfates, or artificial fragrance.</p>
+      <div style="background:var(--card); border-radius:var(--radius-md); padding:36px 28px; text-align:center; border:1px solid var(--line-light); transition:transform 0.2s,box-shadow 0.2s;">
+        <div style="width:64px; height:64px; background:var(--brand-subtle); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-size:28px;">✅</div>
+        <h3 style="font-size:18px; margin-bottom:10px; color:var(--text);">{{ 'core_advantages.item3_title' | t }}</h3>
+        <p style="font-size:14px; color:var(--text-secondary); line-height:1.7;">{{ 'core_advantages.item3_desc' | t }}</p>
       </div>
     </div>
   </div>
 
-  <div style="background:var(--bg-warm); padding:60px 20px; text-align:center;">
+  <!-- Customer Pain Points -->
+  <div style="background:var(--bg-warm); padding:60px 20px;">
+    <div class="container" style="max-width:960px; margin:0 auto;">
+      <h2 style="text-align:center; font-size:26px; margin-bottom:40px; color:var(--text);">{{ 'pain_points.title' | t }}</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px;">
+        <div style="background:var(--card); border-radius:var(--radius-md); padding:28px 20px; text-align:center; box-shadow:0 1px 8px rgba(0,0,0,0.04);">
+          <div style="font-size:32px; margin-bottom:12px;">🛢️</div>
+          <h4 style="font-size:16px; margin-bottom:6px; color:var(--text);">{{ 'pain_points.item1_title' | t }}</h4>
+          <p style="font-size:13px; color:var(--text-secondary); line-height:1.6;">{{ 'pain_points.item1_desc' | t }}</p>
+        </div>
+        <div style="background:var(--card); border-radius:var(--radius-md); padding:28px 20px; text-align:center; box-shadow:0 1px 8px rgba(0,0,0,0.04);">
+          <div style="font-size:32px; margin-bottom:12px;">❄️</div>
+          <h4 style="font-size:16px; margin-bottom:6px; color:var(--text);">{{ 'pain_points.item2_title' | t }}</h4>
+          <p style="font-size:13px; color:var(--text-secondary); line-height:1.6;">{{ 'pain_points.item2_desc' | t }}</p>
+        </div>
+        <div style="background:var(--card); border-radius:var(--radius-md); padding:28px 20px; text-align:center; box-shadow:0 1px 8px rgba(0,0,0,0.04);">
+          <div style="font-size:32px; margin-bottom:12px;">😣</div>
+          <h4 style="font-size:16px; margin-bottom:6px; color:var(--text);">{{ 'pain_points.item3_title' | t }}</h4>
+          <p style="font-size:13px; color:var(--text-secondary); line-height:1.6;">{{ 'pain_points.item3_desc' | t }}</p>
+        </div>
+        <div style="background:var(--card); border-radius:var(--radius-md); padding:28px 20px; text-align:center; box-shadow:0 1px 8px rgba(0,0,0,0.04);">
+          <div style="font-size:32px; margin-bottom:12px;">💔</div>
+          <h4 style="font-size:16px; margin-bottom:6px; color:var(--text);">{{ 'pain_points.item4_title' | t }}</h4>
+          <p style="font-size:13px; color:var(--text-secondary); line-height:1.6;">{{ 'pain_points.item4_desc' | t }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Proof -->
+  <div class="container" style="max-width:960px; margin:0 auto; padding:60px 20px;">
+    <h2 style="text-align:center; font-size:26px; margin-bottom:40px; color:var(--text);">{{ 'testimonials.title' | t }}</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px;">
+      <div style="background:var(--card); border-radius:var(--radius-md); padding:28px; border:1px solid var(--line-light);">
+        <p style="font-size:15px; color:var(--text); line-height:1.7; margin-bottom:16px; font-style:italic;">"{{ 'testimonials.item1_text' | t }}"</p>
+        <div style="font-size:14px; color:var(--brand); font-weight:600;">{{ 'testimonials.item1_author' | t }}</div>
+        <div style="font-size:12px; color:var(--text-muted);">{{ 'testimonials.item1_tag' | t }}</div>
+      </div>
+      <div style="background:var(--card); border-radius:var(--radius-md); padding:28px; border:1px solid var(--line-light);">
+        <p style="font-size:15px; color:var(--text); line-height:1.7; margin-bottom:16px; font-style:italic;">"{{ 'testimonials.item2_text' | t }}"</p>
+        <div style="font-size:14px; color:var(--brand); font-weight:600;">{{ 'testimonials.item2_author' | t }}</div>
+        <div style="font-size:12px; color:var(--text-muted);">{{ 'testimonials.item2_tag' | t }}</div>
+      </div>
+      <div style="background:var(--card); border-radius:var(--radius-md); padding:28px; border:1px solid var(--line-light);">
+        <p style="font-size:15px; color:var(--text); line-height:1.7; margin-bottom:16px; font-style:italic;">"{{ 'testimonials.item3_text' | t }}"</p>
+        <div style="font-size:14px; color:var(--brand); font-weight:600;">{{ 'testimonials.item3_author' | t }}</div>
+        <div style="font-size:12px; color:var(--text-muted);">{{ 'testimonials.item3_tag' | t }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom CTA -->
+  <div style="background:linear-gradient(135deg, var(--brand-dark), var(--brand)); color:#fff; padding:60px 20px; text-align:center;">
     <div class="container" style="max-width:600px; margin:0 auto;">
-      <h2 style="font-size:28px; margin-bottom:12px; color:var(--text);">{{ 'general.hero_slogan' | t }}</h2>
-      <p style="font-size:16px; color:var(--text-secondary); margin-bottom:32px;">{{ 'general.hero_desc' | t }}</p>
-      <a href="#contact" style="display:inline-block; background:var(--brand); color:#fff; padding:18px 56px; border-radius:var(--radius-full); font-size:20px; font-weight:700; text-decoration:none;">
-        {{ 'general.consult_now' | t }}
+      <h2 style="font-size:28px; margin-bottom:12px; color:#fff;">{{ 'general.hero_slogan' | t }}</h2>
+      <p style="font-size:16px; opacity:0.85; margin-bottom:32px; line-height:1.7;">{{ 'why_us.effects_desc' | t }}</p>
+      <a href="#contact" style="display:inline-block; background:var(--accent); color:#1a1a2e; padding:18px 56px; border-radius:var(--radius-full); font-size:20px; font-weight:700; text-decoration:none; box-shadow:0 4px 24px rgba(214,158,46,0.5);">
+        {{ 'general.consult_now' | t }} →
       </a>
+      <p style="margin-top:20px; font-size:13px; opacity:0.6;">{{ 'why_us.welfare_desc' | t }}</p>
     </div>
   </div>
 </section>
