@@ -266,7 +266,7 @@
     "form_submit": "提交咨询",
     "other_label": "其他",
     "name_placeholder": "您的姓名",
-    "phone_placeholder": "手机号/微信号",
+    "phone_placeholder": "邮箱",
     "message_placeholder": "简述您的头皮困扰...",
     "form_success": "感谢提交！我们将在24小时内联系您。"
   },
