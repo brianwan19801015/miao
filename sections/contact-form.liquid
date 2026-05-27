@@ -20,7 +20,7 @@
       <input type="text" name="contact[name]" value="{% if form.name %}{{ form.name }}{% endif %}"
         placeholder="{{ 'contact.name_placeholder' | t }}" required
         style="width:100%; padding:14px 16px; border:1px solid var(--line); border-radius:8px; font-size:16px; margin-bottom:14px;">
-      <input type="text" name="contact[phone]" value="{% if form.phone %}{{ form.phone }}{% endif %}"
+      <input type="email" name="contact[email]" value="{% if form.email %}{{ form.email }}{% endif %}"
         placeholder="{{ 'contact.phone_placeholder' | t }}" required
         style="width:100%; padding:14px 16px; border:1px solid var(--line); border-radius:8px; font-size:16px; margin-bottom:14px;">
       <select name="contact[concern]"
@@ -48,11 +48,11 @@
   if (forms.length) {
     forms.forEach(function(f) {
       f.addEventListener('submit', function(e) {
-        var phone = f.querySelector('input[name="contact\\[phone\\]"]');
+        var email = f.querySelector('input[name="contact\\[email\\]"]');
         var name = f.querySelector('input[name="contact\\[name\\]"]');
         var errors = [];
         if (name && !name.value.trim()) errors.push(name.placeholder);
-        if (phone && !phone.value.trim()) errors.push(phone.placeholder);
+        if (email && !email.value.trim()) errors.push(email.placeholder);
         if (errors.length) {
           e.preventDefault();
           var btn = f.querySelector('button[type="submit"]');
