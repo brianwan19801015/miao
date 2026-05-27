@@ -266,7 +266,9 @@
     "form_submit": "Submit Inquiry",
     "other_label": "Other",
     "name_placeholder": "Your Name",
-    "phone_placeholder": "Phone/WeChat"
+    "phone_placeholder": "Phone/WeChat",
+    "message_placeholder": "Tell us about your scalp concern...",
+    "form_success": "Thank you! We'll get back to you within 24 hours."
   },
   "trust_bar": {
     "item1": "Gentle Herbal Formula",
