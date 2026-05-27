@@ -278,7 +278,11 @@
     "subtitle": "专注头皮净养的草本品牌",
     "link_home": "首页",
     "link_product": "产品",
-    "link_contact": "联系"
+    "link_contact": "联系",
+    "link_privacy": "隐私政策",
+    "link_legal": "法律声明",
+    "link_shipping": "配送与退换",
+    "rights": "保留所有权利。"
   },
   "product_line": {
     "title": "产品系列",
