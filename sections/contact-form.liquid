@@ -34,13 +34,41 @@
       </select>
       <textarea name="contact[body]" rows="4" placeholder="{{ 'contact.message_placeholder' | t }}"
         style="width:100%; padding:14px 16px; border:1px solid var(--line); border-radius:8px; font-size:16px; font-family:inherit; resize:vertical; margin-bottom:14px;">{% if form.body %}{{ form.body }}{% endif %}</textarea>
-      <button type="submit"
+      <button type="submit" id="contactFormSubmit"
         style="width:100%; background:var(--brand); color:#fff; border:none; padding:16px; border-radius:var(--radius-full); font-size:18px; font-weight:700; cursor:pointer;">
         {{ 'contact.form_submit' | t }}
       </button>
     {% endform %}
   </div>
 </section>
+
+<script>
+(function() {
+  var forms = document.querySelectorAll('form[action*="contact"]');
+  if (forms.length) {
+    forms.forEach(function(f) {
+      f.addEventListener('submit', function(e) {
+        var phone = f.querySelector('input[name="contact\\[phone\\]"]');
+        var name = f.querySelector('input[name="contact\\[name\\]"]');
+        var errors = [];
+        if (name && !name.value.trim()) errors.push(name.placeholder);
+        if (phone && !phone.value.trim()) errors.push(phone.placeholder);
+        if (errors.length) {
+          e.preventDefault();
+          var btn = f.querySelector('button[type="submit"]');
+          var orig = btn.textContent;
+          btn.textContent = 'Please fill: ' + errors.join(', ');
+          btn.style.background = '#c53030';
+          setTimeout(function() {
+            btn.textContent = orig;
+            btn.style.background = '';
+          }, 2500);
+        }
+      });
+    });
+  }
+})();
+</script>
 
 {% schema %}
 {
