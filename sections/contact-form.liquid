@@ -1,0 +1,51 @@
+<section class="contact-form-section" style="padding:100px 0 80px;">
+  <div class="container" style="max-width:600px; margin:0 auto; padding:0 20px;">
+    <h2 style="text-align:center; font-size:28px; margin-bottom:8px;">{{ 'contact.title' | t }}</h2>
+    <p style="text-align:center; color:var(--text-secondary); margin-bottom:36px;">{{ 'contact.desc' | t }}</p>
+
+    {% form 'contact' %}
+      {% if form.posted_successfully? %}
+        <div style="background:#f0fff4; border:1px solid #48bb78; color:#22543d; padding:20px; border-radius:var(--radius-md); text-align:center; margin-bottom:24px;">
+          <span style="font-size:24px;">&#10003;</span>
+          <p style="font-size:16px; font-weight:600; margin:8px 0 0;">{{ 'contact.form_success' | t }}</p>
+        </div>
+      {% endif %}
+
+      {% if form.errors %}
+        <div style="background:#fff5f5; border:1px solid #fc8181; color:#c53030; padding:16px; border-radius:var(--radius-md); margin-bottom:24px;">
+          {{ form.errors | default_errors }}
+        </div>
+      {% endif %}
+
+      <input type="text" name="contact[name]" value="{% if form.name %}{{ form.name }}{% endif %}"
+        placeholder="{{ 'contact.name_placeholder' | t }}" required
+        style="width:100%; padding:14px 16px; border:1px solid var(--line); border-radius:8px; font-size:16px; margin-bottom:14px;">
+      <input type="text" name="contact[phone]" value="{% if form.phone %}{{ form.phone }}{% endif %}"
+        placeholder="{{ 'contact.phone_placeholder' | t }}" required
+        style="width:100%; padding:14px 16px; border:1px solid var(--line); border-radius:8px; font-size:16px; margin-bottom:14px;">
+      <select name="contact[concern]"
+        style="width:100%; padding:14px 16px; border:1px solid var(--line); border-radius:8px; font-size:16px; margin-bottom:14px; background:#fff;">
+        <option value="">{{ 'contact.form_placeholder' | t }}</option>
+        <option value="Oily Scalp" {% if form.concern == 'Oily Scalp' %}selected{% endif %}>{{ 'pain_points.item1_title' | t }}</option>
+        <option value="Dandruff" {% if form.concern == 'Dandruff' %}selected{% endif %}>{{ 'pain_points.item2_title' | t }}</option>
+        <option value="Itching" {% if form.concern == 'Itching' %}selected{% endif %}>{{ 'pain_points.item3_title' | t }}</option>
+        <option value="Hair Loss" {% if form.concern == 'Hair Loss' %}selected{% endif %}>{{ 'pain_points.item4_title' | t }}</option>
+        <option value="Other" {% if form.concern == 'Other' %}selected{% endif %}>{{ 'contact.other_label' | t }}</option>
+      </select>
+      <textarea name="contact[body]" rows="4" placeholder="{{ 'contact.message_placeholder' | t }}"
+        style="width:100%; padding:14px 16px; border:1px solid var(--line); border-radius:8px; font-size:16px; font-family:inherit; resize:vertical; margin-bottom:14px;">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+      <button type="submit"
+        style="width:100%; background:var(--brand); color:#fff; border:none; padding:16px; border-radius:var(--radius-full); font-size:18px; font-weight:700; cursor:pointer;">
+        {{ 'contact.form_submit' | t }}
+      </button>
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Form",
+  "settings": [],
+  "presets": [{ "name": "Contact Form" }]
+}
+{% endschema %}
