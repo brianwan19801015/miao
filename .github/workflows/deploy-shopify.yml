@@ -1,6 +1,8 @@
 name: Deploy Theme to Shopify
 
-on: [push]
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
   deploy:
