@@ -3,38 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Title & Description -->
-    <title>{% if template == 'page' and page.title != blank %}{{ page.title }} - 苗本芳{% else %}苗本芳 - 草本冷制皂 · 供应链源头工厂 | 全球合作伙伴招募{% endif %}</title>
-    <meta name="description" content="{% if template == 'page' and page.meta_description != blank %}{{ page.meta_description }}{% else %}苗本芳 - 草本冷制皂供应链源头工厂。18味草本配方，45天低温冷制，5大0添加。OEM/ODM定制，面向全球招募经销商与进口商合作伙伴。{% endif %}">
-    <meta name="keywords" content="苗本芳,冷制皂,草本皂,OEM,ODM,手工皂代工,肥皂供应链,天然皂出口">
+
+    <!-- SEO Title & Description -->
+    <title>{%- if template == 'page' and page.title != blank -%}{{ page.title }} | 苗本芳{%- else -%}苗本芳 - 草本冷制皂 · 全球源头工厂 | OEM/ODM 定制{%- endif -%}</title>
+    <meta name="description" content="{%- if template == 'page' and page.meta_description != blank -%}{{ page.meta_description }}{%- elsif template == 'product' and product.metafields.global.description_tag != blank -%}{{ product.metafields.global.description_tag }}{%- else -%}苗本芳 - 草本冷制皂全球供应链源头工厂。18味草本配方，45天低温冷制，5大0添加。OEM/ODM 代工定制，面向全球招募经销商与进口商合作伙伴。{%- endif -%}">
     <link rel="canonical" href="{{ canonical_url }}">
-    
-    <!-- JSON-LD Structured Data -->
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{%- if template == 'page' and page.title != blank -%}{{ page.title }}{%- else -%}苗本芳 - 草本冷制皂 · 全球源头工厂{%- endif -%}">
+    <meta property="og:description" content="{%- if template == 'page' and page.meta_description != blank -%}{{ page.meta_description }}{%- else -%}18味草本配方，45天低温冷制，5大0添加。OEM/ODM定制，全球招募合作伙伴。{%- endif -%}">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <meta property="og:site_name" content="苗本芳">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="{{ 'slide10_img0_33.png' | asset_url }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{%- if template == 'page' and page.title != blank -%}{{ page.title }}{%- else -%}苗本芳 - 草本冷制皂 · 全球源头工厂{%- endif -%}">
+    <meta name="twitter:description" content="{%- if template == 'page' and page.meta_description != blank -%}{{ page.meta_description }}{%- else -%}18味草本配方，45天低温冷制，5大0添加。OEM/ODM定制。{%- endif -%}">
+    <meta name="twitter:image" content="{{ 'slide10_img0_33.png' | asset_url }}">
+
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "苗本芳",
+      "url": "{{ shop.url }}",
+      "description": "苗本芳 - 草本冷制皂供应链源头工厂。18味草本配方，45天低温冷制，5大0添加。OEM/ODM定制，全球招募合作伙伴。",
+      "logo": "{{ 'slide1_img2_1.png' | asset_url }}",
+      "sameAs": []
+    }
+    </script>
+
+    <!-- JSON-LD: Product (Homepage) -->
+    {%- if template == 'index' -%}
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Product",
-      "name": "苗本芳养发皂",
-      "description": "苗本芳 - 草本冷制皂供应链源头工厂。18味草本配方，45天低温冷制，5大0添加。OEM/ODM定制，面向全球招募经销商与进口商合作伙伴。",
-      "brand": {
-        "@type": "Brand",
-        "name": "苗本芳"
-      },
-      "category": "头皮护理",
-      "material": "18味草本植萃"
+      "name": "苗本芳草本养发皂",
+      "description": "苗本芳草本冷制皂。18味草本配方，45天低温冷制，5大0添加（0硅油、0SLS、0防腐剂、0硫酸盐、0人工香精），温和清洁，呵护头皮。",
+      "brand": { "@type": "Brand", "name": "苗本芳" },
+      "image": "{{ 'slide10_img0_33.png' | asset_url }}",
+      "category": "个人护理 > 洗发 & 头皮护理"
     }
     </script>
-    
-    <!-- BreadcrumbList Structured Data -->
+    {%- endif -%}
+
+    <!-- JSON-LD: BreadcrumbList -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "首页", "item": "{{ shop.url }}" },
-        { "@type": "ListItem", "position": 2, "name": "苗本芳养发皂", "item": "{{ shop.url }}" }
+        { "@type": "ListItem", "position": 1, "name": "{{ 'general.home' | t | default: 'Home' }}", "item": "{{ shop.url }}" }
+        {%- if template == 'page' -%}
+        ,{ "@type": "ListItem", "position": 2, "name": "{{ page.title }}", "item": "{{ canonical_url }}" }
+        {%- elsif template == 'product' -%}
+        ,{ "@type": "ListItem", "position": 2, "name": "{{ product.title }}", "item": "{{ canonical_url }}" }
+        {%- endif -%}
       ]
+    }
+    </script>
+
+    <!-- JSON-LD: WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "苗本芳",
+      "url": "{{ shop.url }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ shop.url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
 
