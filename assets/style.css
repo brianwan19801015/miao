@@ -4,13 +4,16 @@
    ===================================================== */
 
 :root {
-  /* 品牌色系 - 草本自然风 */
+  /* 品牌色系 - 古法草本风（对标Viori极简+自然质感） */
   --brand: #2f855a;
   --brand-light: #48bb78;
   --brand-dark: #22543d;
   --brand-subtle: #f0fff4;
-  --accent: #d69e2e;
-  --accent-light: #fefcbf;
+  --accent: #b8860b;
+  --accent-light: #fef3cd;
+  --herbal-green: #5a8f6a;
+  --earth-brown: #8b7355;
+  --cream: #faf6f0;
 
   /* 中性色 */
   --bg: #fafaf9;
@@ -72,7 +75,7 @@ body {
   margin: 0;
   color: var(--text);
   background: var(--bg);
-  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", -apple-system, sans-serif;
+  font-family: "Inter", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", -apple-system, sans-serif;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;

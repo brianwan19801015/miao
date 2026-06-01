@@ -1,21 +1,19 @@
 <section class="product-intro" id="product">
   <div class="container">
-    <!-- 主体：图+文左右布局 -->
+    <!-- Hero Story Block: Inspired by Viori's "Story Behind the Bar" -->
     <div class="product-intro-grid">
       <div class="product-intro-image">
         <img src="{{ 'slide3_img1_8.png' | asset_url }}" alt="{{ 'general.hero_title' | t }}" loading="lazy">
       </div>
       <div class="product-intro-text">
         <div class="intro-block">
-          <span class="badge">BRAND STORY</span>
+          <span class="badge">{{ 'product_intro.positioning_badge' | t }}</span>
           <h2>{{ 'product_intro.story_title' | t }}</h2>
-          <p>{{ 'product_intro.story_desc' | t }}</p>
+          <p>{{ 'product_intro.story_desc' | t | newline_to_br }}</p>
         </div>
         
         <div class="intro-block">
-          <span class="badge">PRODUCT POSITIONING</span>
-          <h2>{{ 'product_intro.positioning_badge' | t }}</h2>
-          <p>{{ 'product_intro.positioning_desc' | t }}</p>
+          <p class="positioning-desc">{{ 'product_intro.positioning_desc' | t }}</p>
         </div>
         
         <ul class="product-features">
@@ -29,7 +27,7 @@
       </div>
     </div>
 
-    <!-- 底部：苗家智慧传承 -->
+    <!-- Heritage Section: From Miao Mountains to Global Markets -->
     <div class="heritage-section">
       <div class="heritage-content">
         <div class="heritage-icon">🌿</div>
