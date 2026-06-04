@@ -1,0 +1,490 @@
+<!-- trial-feedback.liquid -->
+<section class="trial-feedback-section" style="padding:120px 0 80px;">
+  <div class="container" style="max-width:760px; margin:0 auto; padding:0 20px;">
+
+    <!-- Header -->
+    <div style="text-align:center; margin-bottom:40px;">
+      <span style="display:inline-block; background:var(--brand); color:#fff; font-size:13px; padding:4px 16px; border-radius:20px; margin-bottom:12px;">{{ 'trial_feedback.badge' | t }}</span>
+      <h1 style="font-size:32px; font-weight:700; margin-bottom:8px;">{{ 'trial_feedback.title' | t }}</h1>
+      <p style="color:var(--text-secondary); font-size:15px; line-height:1.8;">{{ 'trial_feedback.desc' | t }}</p>
+    </div>
+
+    <!-- Rating Rules Notice -->
+    <div style="background:#f8f4ef; border-left:4px solid var(--brand); border-radius:8px; padding:16px 20px; margin-bottom:28px; font-size:14px; line-height:1.8; color:#555;">
+      <strong style="color:var(--brand);">📌 {{ 'trial_feedback.rating_rules_title' | t }}：</strong>{{ 'trial_feedback.rating_rules' | t }}<br>
+      <strong style="color:var(--brand);">📌 {{ 'trial_feedback.tips_title' | t }}：</strong>{{ 'trial_feedback.tips' | t }}
+    </div>
+
+    {% form 'contact' %}
+      {% if form.posted_successfully? %}
+        <div style="background:#f0fff4; border:1px solid #48bb78; color:#22543d; padding:30px; border-radius:12px; text-align:center; margin-bottom:24px;">
+          <span style="font-size:48px;">🎉</span>
+          <h3 style="font-size:20px; margin:12px 0 6px;">{{ 'trial_feedback.success_title' | t }}</h3>
+          <p style="font-size:15px; color:#555;">{{ 'trial_feedback.success_desc' | t }}</p>
+        </div>
+      {% endif %}
+
+      {% if form.errors %}
+        <div style="background:#fff5f5; border:1px solid #fc8181; color:#c53030; padding:16px; border-radius:8px; margin-bottom:24px;">
+          {{ form.errors | default_errors }}
+        </div>
+      {% endif %}
+
+      <!-- ============================================================ -->
+      <!-- 一、基础信息 -->
+      <!-- ============================================================ -->
+      <div class="tf-section">
+        <div class="tf-section-title"><span class="tf-num">一</span> {{ 'trial_feedback.section1_title' | t }}</div>
+        <div class="tf-section-body">
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.name' | t }} <span class="tf-req">*</span></label>
+            <input type="text" name="contact[name]" value="{% if form.name %}{{ form.name }}{% endif %}" class="tf-input" placeholder="{{ 'trial_feedback.name_placeholder' | t }}" required>
+          </div>
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.gender' | t }} <span class="tf-req">*</span></label>
+            <div class="tf-options">
+              <label class="tf-opt"><input type="radio" name="contact[gender]" value="男" {% if form.gender == '男' %}checked{% endif %}> {{ 'trial_feedback.gender_male' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[gender]" value="女" {% if form.gender == '女' %}checked{% endif %}> {{ 'trial_feedback.gender_female' | t }}</label>
+            </div>
+          </div>
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.hair_type' | t }} <span class="tf-req">*</span> <span class="tf-hint">（{{ 'trial_feedback.single_choice' | t }}）</span></label>
+            <div class="tf-options">
+              <label class="tf-opt"><input type="radio" name="contact[hair_type]" value="油性" {% if form.hair_type == '油性' %}checked{% endif %}> ① {{ 'trial_feedback.hair_oily' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[hair_type]" value="干性" {% if form.hair_type == '干性' %}checked{% endif %}> ② {{ 'trial_feedback.hair_dry' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[hair_type]" value="中性" {% if form.hair_type == '中性' %}checked{% endif %}> ③ {{ 'trial_feedback.hair_normal' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[hair_type]" value="烫染受损发质" {% if form.hair_type == '烫染受损发质' %}checked{% endif %}> ④ {{ 'trial_feedback.hair_damaged' | t }}</label>
+            </div>
+          </div>
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.scalp_issues' | t }} <span class="tf-req">*</span> <span class="tf-hint">（{{ 'trial_feedback.multi_choice' | t }}）</span></label>
+            <div class="tf-options">
+              <label class="tf-opt"><input type="checkbox" name="contact[scalp_issue_1]" value="头屑多头皮发痒" {% if form.scalp_issue_1 %}checked{% endif %}> ① {{ 'trial_feedback.scalp_issue1' | t }}</label>
+              <label class="tf-opt"><input type="checkbox" name="contact[scalp_issue_2]" value="出油快发根贴头皮" {% if form.scalp_issue_2 %}checked{% endif %}> ② {{ 'trial_feedback.scalp_issue2' | t }}</label>
+              <label class="tf-opt"><input type="checkbox" name="contact[scalp_issue_3]" value="干枯毛躁易打结" {% if form.scalp_issue_3 %}checked{% endif %}> ③ {{ 'trial_feedback.scalp_issue3' | t }}</label>
+              <label class="tf-opt"><input type="checkbox" name="contact[scalp_issue_4]" value="洗头梳头容易断发" {% if form.scalp_issue_4 %}checked{% endif %}> ④ {{ 'trial_feedback.scalp_issue4' | t }}</label>
+              <label class="tf-opt"><input type="checkbox" name="contact[scalp_issue_5]" value="无头皮问题" {% if form.scalp_issue_5 %}checked{% endif %}> ⑤ {{ 'trial_feedback.scalp_issue5' | t }}</label>
+            </div>
+          </div>
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.start_date' | t }} <span class="tf-req">*</span></label>
+            <input type="text" name="contact[start_date]" value="{% if form.start_date %}{{ form.start_date }}{% endif %}" class="tf-input" style="width:200px;" placeholder="{{ 'trial_feedback.start_date_placeholder' | t }}">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 二、第一次试用测评 -->
+      <!-- ============================================================ -->
+      <div class="tf-section">
+        <div class="tf-section-title"><span class="tf-num">二</span> {{ 'trial_feedback.section2_title' | t }}</div>
+        <div class="tf-section-body">
+
+          <p style="font-size:13px; color:#999; margin-bottom:14px;">{{ 'trial_feedback.score_hint' | t }}</p>
+
+          {% assign scores = '1分,2分,3分,4分,5分' | split: ',' %}
+          {% assign score_fields_s2 = 'f1_nourish,f1_dandruff,f1_oil,f1_break,f1_portable' | split: ',' %}
+          {% assign score_labels_s2 = 'trial_feedback.score_nourish,trial_feedback.score_dandruff,trial_feedback.score_oil,trial_feedback.score_break,trial_feedback.score_portable' | split: ',' %}
+
+          {% for i in (0..4) %}
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.first_use' | t }} - {{ score_labels_s2[i] | t }}</label>
+            <div class="tf-score-group">
+              {% for s in scores %}
+                {% assign val = s | split: '分' | first %}
+                <label class="tf-score-opt"><input type="radio" name="contact[{{ score_fields_s2[i] }}]" value="{{ val }}" {% if form[score_fields_s2[i]] == val %}checked{% endif %}> {{ s }}</label>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+
+          <hr class="tf-sep">
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.foam' | t }} <span class="tf-hint">（{{ 'trial_feedback.single_choice' | t }}）</span></label>
+            <div class="tf-options">
+              <label class="tf-opt"><input type="radio" name="contact[f1_foam]" value="泡沫绵密丰富" {% if form.f1_foam == '泡沫绵密丰富' %}checked{% endif %}> {{ 'trial_feedback.foam_rich' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[f1_foam]" value="泡沫偏少" {% if form.f1_foam == '泡沫偏少' %}checked{% endif %}> {{ 'trial_feedback.foam_less' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[f1_foam]" value="很难起泡" {% if form.f1_foam == '很难起泡' %}checked{% endif %}> {{ 'trial_feedback.foam_hard' | t }}</label>
+            </div>
+          </div>
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.scalp_feel' | t }} <span class="tf-hint">（{{ 'trial_feedback.single_choice' | t }}）</span></label>
+            <div class="tf-options">
+              <label class="tf-opt"><input type="radio" name="contact[f1_scalp_feel]" value="温和舒适" {% if form.f1_scalp_feel == '温和舒适' %}checked{% endif %}> {{ 'trial_feedback.scalp_feel_comfort' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[f1_scalp_feel]" value="轻微紧绷" {% if form.f1_scalp_feel == '轻微紧绷' %}checked{% endif %}> {{ 'trial_feedback.scalp_feel_tight' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[f1_scalp_feel]" value="刺痛发痒" {% if form.f1_scalp_feel == '刺痛发痒' %}checked{% endif %}> {{ 'trial_feedback.scalp_feel_itch' | t }}</label>
+            </div>
+          </div>
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.first_experience' | t }}</label>
+            <textarea name="contact[f1_experience]" rows="4" class="tf-textarea" placeholder="{{ 'trial_feedback.first_experience_placeholder' | t }}">{% if form.f1_experience %}{{ form.f1_experience }}{% endif %}</textarea>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 三、第二次试用测评 -->
+      <!-- ============================================================ -->
+      <div class="tf-section">
+        <div class="tf-section-title"><span class="tf-num">三</span> {{ 'trial_feedback.section3_title' | t }}</div>
+        <div class="tf-section-body">
+
+          <p style="font-size:13px; color:#999; margin-bottom:14px;">{{ 'trial_feedback.score_hint' | t }}</p>
+
+          {% assign score_fields_s3 = 'f2_nourish,f2_dandruff,f2_oil,f2_break,f2_portable' | split: ',' %}
+          {% for i in (0..4) %}
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.second_use' | t }} - {{ score_labels_s2[i] | t }}</label>
+            <div class="tf-score-group">
+              {% for s in scores %}
+                {% assign val = s | split: '分' | first %}
+                <label class="tf-score-opt"><input type="radio" name="contact[{{ score_fields_s3[i] }}]" value="{{ val }}" {% if form[score_fields_s3[i]] == val %}checked{% endif %}> {{ s }}</label>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+
+          <hr class="tf-sep">
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.oil_state' | t }} <span class="tf-hint">（{{ 'trial_feedback.single_choice' | t }}）</span></label>
+            <div class="tf-options">
+              <label class="tf-opt"><input type="radio" name="contact[f2_oil_state]" value="整体干爽" {% if form.f2_oil_state == '整体干爽' %}checked{% endif %}> {{ 'trial_feedback.oil_state_dry' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[f2_oil_state]" value="局部少量出油" {% if form.f2_oil_state == '局部少量出油' %}checked{% endif %}> {{ 'trial_feedback.oil_state_partial' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[f2_oil_state]" value="全头出油扁塌" {% if form.f2_oil_state == '全头出油扁塌' %}checked{% endif %}> {{ 'trial_feedback.oil_state_full' | t }}</label>
+            </div>
+          </div>
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.dandruff_change' | t }} <span class="tf-hint">（{{ 'trial_feedback.single_choice' | t }}）</span></label>
+            <div class="tf-options">
+              <label class="tf-opt"><input type="radio" name="contact[f2_dandruff_change]" value="头屑变少" {% if form.f2_dandruff_change == '头屑变少' %}checked{% endif %}> {{ 'trial_feedback.dandruff_less' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[f2_dandruff_change]" value="无明显变化" {% if form.f2_dandruff_change == '无明显变化' %}checked{% endif %}> {{ 'trial_feedback.dandruff_no_change' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[f2_dandruff_change]" value="头屑增多" {% if form.f2_dandruff_change == '头屑增多' %}checked{% endif %}> {{ 'trial_feedback.dandruff_more' | t }}</label>
+            </div>
+          </div>
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.second_experience' | t }}</label>
+            <textarea name="contact[f2_experience]" rows="4" class="tf-textarea" placeholder="{{ 'trial_feedback.second_experience_placeholder' | t }}">{% if form.f2_experience %}{{ form.f2_experience }}{% endif %}</textarea>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 四、连续5次以上长期使用测评 -->
+      <!-- ============================================================ -->
+      <div class="tf-section">
+        <div class="tf-section-title"><span class="tf-num">四</span> {{ 'trial_feedback.section4_title' | t }}</div>
+        <div class="tf-section-body">
+
+          <p style="font-size:13px; color:#999; margin-bottom:14px;">{{ 'trial_feedback.score_hint' | t }}</p>
+
+          {% assign score_fields_s4 = 'f3_nourish,f3_dandruff,f3_oil,f3_break,f3_portable' | split: ',' %}
+          {% for i in (0..4) %}
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.multi_use' | t }} - {{ score_labels_s2[i] | t }}</label>
+            <div class="tf-score-group">
+              {% for s in scores %}
+                {% assign val = s | split: '分' | first %}
+                <label class="tf-score-opt"><input type="radio" name="contact[{{ score_fields_s4[i] }}]" value="{{ val }}" {% if form[score_fields_s4[i]] == val %}checked{% endif %}> {{ s }}</label>
+              {% endfor %}
+            </div>
+          </div>
+          {% endfor %}
+
+          <hr class="tf-sep">
+
+          <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:16px;">
+            <div style="flex:1; min-width:160px;">
+              <label class="tf-label">{{ 'trial_feedback.before_oil_days' | t }}</label>
+              <input type="text" name="contact[f3_before_oil_days]" value="{% if form.f3_before_oil_days %}{{ form.f3_before_oil_days }}{% endif %}" class="tf-input" style="width:120px;" placeholder="{{ 'trial_feedback.before_oil_days_placeholder' | t }}">
+            </div>
+            <div style="flex:1; min-width:160px;">
+              <label class="tf-label">{{ 'trial_feedback.after_oil_days' | t }}</label>
+              <input type="text" name="contact[f3_after_oil_days]" value="{% if form.f3_after_oil_days %}{{ form.f3_after_oil_days }}{% endif %}" class="tf-input" style="width:120px;" placeholder="{{ 'trial_feedback.after_oil_days_placeholder' | t }}">
+            </div>
+          </div>
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.scalp_improvement' | t }}</label>
+            <textarea name="contact[f3_scalp_improve]" rows="4" class="tf-textarea" placeholder="{{ 'trial_feedback.scalp_improvement_placeholder' | t }}">{% if form.f3_scalp_improve %}{{ form.f3_scalp_improve }}{% endif %}</textarea>
+          </div>
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.hair_change' | t }}</label>
+            <textarea name="contact[f3_hair_change]" rows="4" class="tf-textarea" placeholder="{{ 'trial_feedback.hair_change_placeholder' | t }}">{% if form.f3_hair_change %}{{ form.f3_hair_change }}{% endif %}</textarea>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 五、综合选购反馈 -->
+      <!-- ============================================================ -->
+      <div class="tf-section">
+        <div class="tf-section-title"><span class="tf-num">五</span> {{ 'trial_feedback.section5_title' | t }}</div>
+        <div class="tf-section-body">
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.compare' | t }} <span class="tf-hint">（{{ 'trial_feedback.single_choice' | t }}）</span></label>
+            <div class="tf-options">
+              <label class="tf-opt"><input type="radio" name="contact[compare]" value="效果更好" {% if form.compare == '效果更好' %}checked{% endif %}> {{ 'trial_feedback.compare_better' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[compare]" value="效果差不多" {% if form.compare == '效果差不多' %}checked{% endif %}> {{ 'trial_feedback.compare_same' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[compare]" value="不如原有产品" {% if form.compare == '不如原有产品' %}checked{% endif %}> {{ 'trial_feedback.compare_worse' | t }}</label>
+            </div>
+          </div>
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.repurchase' | t }} <span class="tf-hint">（{{ 'trial_feedback.single_choice' | t }}）</span></label>
+            <div class="tf-options">
+              <label class="tf-opt"><input type="radio" name="contact[repurchase]" value="一定会回购" {% if form.repurchase == '一定会回购' %}checked{% endif %}> {{ 'trial_feedback.repurchase_yes' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[repurchase]" value="暂时观望" {% if form.repurchase == '暂时观望' %}checked{% endif %}> {{ 'trial_feedback.repurchase_wait' | t }}</label>
+              <label class="tf-opt"><input type="radio" name="contact[repurchase]" value="不打算回购" {% if form.repurchase == '不打算回购' %}checked{% endif %}> {{ 'trial_feedback.repurchase_no' | t }}</label>
+            </div>
+          </div>
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.optimization' | t }}</label>
+            <textarea name="contact[optimization]" rows="4" class="tf-textarea" placeholder="{{ 'trial_feedback.optimization_placeholder' | t }}">{% if form.optimization %}{{ form.optimization }}{% endif %}</textarea>
+          </div>
+
+          <div class="tf-field">
+            <label class="tf-label">{{ 'trial_feedback.overall_score' | t }} <span class="tf-hint">（{{ 'trial_feedback.single_choice' | t }}）</span></label>
+            <div class="tf-score-group">
+              {% for s in scores %}
+                {% assign val = s | split: '分' | first %}
+                <label class="tf-score-opt"><input type="radio" name="contact[overall_score]" value="{{ val }}" {% if form.overall_score == val %}checked{% endif %}> {{ s }}</label>
+              {% endfor %}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" id="trialFeedbackSubmit" style="width:100%; background:var(--brand); color:#fff; border:none; padding:18px; border-radius:var(--radius-full); font-size:18px; font-weight:700; cursor:pointer; margin-top:8px;">
+        {{ 'trial_feedback.submit' | t }}
+      </button>
+
+      <div style="text-align:center; margin-top:24px;">
+        <p style="font-size:14px; color:#999;">{{ 'trial_feedback.thanks' | t }}</p>
+      </div>
+
+    {% endform %}
+  </div>
+</section>
+
+<style>
+/* ===== Trial Feedback Styles ===== */
+.tf-section {
+  margin-bottom: 24px;
+  border: 1px solid #e8e2da;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.tf-section-title {
+  background: #f0ebe4;
+  padding: 14px 20px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tf-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  background: var(--brand);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.tf-section-body {
+  padding: 18px 20px 20px;
+}
+.tf-field {
+  margin-bottom: 16px;
+}
+.tf-field:last-child {
+  margin-bottom: 0;
+}
+.tf-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+}
+.tf-req {
+  color: #c0392b;
+  margin-left: 2px;
+}
+.tf-hint {
+  font-weight: 400;
+  font-size: 12px;
+  color: #999;
+  margin-left: 6px;
+}
+.tf-input {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px dashed #d5ccc3;
+  padding: 8px 4px;
+  font-size: 15px;
+  background: transparent;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.tf-input:focus {
+  border-bottom-color: var(--brand);
+}
+.tf-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 4px;
+}
+.tf-opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.tf-opt input[type="radio"],
+.tf-opt input[type="checkbox"] {
+  width: 16px; height: 16px;
+  accent-color: var(--brand);
+  cursor: pointer;
+}
+.tf-score-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.tf-score-opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.tf-score-opt input[type="radio"] {
+  accent-color: var(--brand);
+}
+.tf-textarea {
+  width: 100%;
+  min-height: 60px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fafafa;
+}
+.tf-textarea:focus {
+  border-color: var(--brand);
+  background: #fff;
+}
+.tf-sep {
+  border: none;
+  border-top: 1px dashed #e0d8ce;
+  margin: 18px 0;
+}
+</style>
+
+<script>
+(function() {
+  var form = document.querySelector('form[action*="contact"]');
+  if (!form) return;
+
+  // 获取所有表单字段值（从 contact[name] 转为 name）
+  function getFormData(form) {
+    var data = {};
+    var fields = form.querySelectorAll('input, textarea, select');
+    fields.forEach(function(f) {
+      if (f.type === 'radio' || f.type === 'checkbox') {
+        if (f.checked) {
+          var name = f.name.replace('contact[', '').replace(']', '');
+          if (data[name]) {
+            if (!Array.isArray(data[name])) data[name] = [data[name]];
+            data[name].push(f.value);
+          } else {
+            data[name] = f.value;
+          }
+        }
+        return;
+      }
+      if (f.name && f.name.startsWith('contact[')) {
+        var name = f.name.replace('contact[', '').replace(']', '');
+        data[name] = f.value;
+      }
+    });
+    return data;
+  }
+
+  form.addEventListener('submit', function(e) {
+    var name = form.querySelector('input[name="contact[name]"]');
+    var errors = [];
+    if (name && !name.value.trim()) errors.push('{{ 'trial_feedback.name' | t }}');
+    if (errors.length) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var orig = btn.textContent;
+      btn.textContent = '请填写: ' + errors.join(', ');
+      btn.style.background = '#c53030';
+      setTimeout(function() {
+        btn.textContent = orig;
+        btn.style.background = '';
+      }, 2500);
+      return;
+    }
+
+    // 异步提交到腾讯云云函数（不影响 Shopify 表单正常提交）
+    var formData = getFormData(form);
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://www.vibelingan.com/trialFeedback', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          console.log('试用反馈已同步到数据库');
+        } else {
+          console.warn('试用反馈同步失败:', xhr.status, xhr.responseText);
+        }
+      }
+    };
+    xhr.send(JSON.stringify({ body: formData }));
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Trial Feedback Form",
+  "settings": [],
+  "presets": [{ "name": "Trial Feedback Form" }]
+}
+{% endschema %}

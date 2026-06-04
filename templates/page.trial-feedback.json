@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "trial-feedback": {
+      "type": "trial-feedback"
+    }
+  },
+  "order": [
+    "trial-feedback"
+  ]
+}
