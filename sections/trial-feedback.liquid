@@ -16,19 +16,9 @@
     </div>
 
     {% form 'contact' %}
-      {% if form.posted_successfully? %}
-        <div style="background:#f0fff4; border:1px solid #48bb78; color:#22543d; padding:30px; border-radius:12px; text-align:center; margin-bottom:24px;">
-          <span style="font-size:48px;">🎉</span>
-          <h3 style="font-size:20px; margin:12px 0 6px;">{{ 'trial_feedback.success_title' | t }}</h3>
-          <p style="font-size:15px; color:#555;">{{ 'trial_feedback.success_desc' | t }}</p>
-        </div>
-      {% endif %}
+      <!-- 隐藏的 email 字段，满足 Shopify contact form 验证要求 -->
+      <input type="hidden" name="contact[email]" value="feedback@herbalcare.com">
 
-      {% if form.errors %}
-        <div style="background:#fff5f5; border:1px solid #fc8181; color:#c53030; padding:16px; border-radius:8px; margin-bottom:24px;">
-          {{ form.errors | default_errors }}
-        </div>
-      {% endif %}
 
       <!-- ============================================================ -->
       <!-- 一、基础信息 -->
@@ -446,37 +436,72 @@
   }
 
   form.addEventListener('submit', function(e) {
-    var name = form.querySelector('input[name="contact[name]"]');
-    var errors = [];
-    if (name && !name.value.trim()) errors.push('{{ 'trial_feedback.name' | t }}');
-    if (errors.length) {
-      e.preventDefault();
-      var btn = form.querySelector('button[type="submit"]');
-      var orig = btn.textContent;
-      btn.textContent = '请填写: ' + errors.join(', ');
+    // 阻止 Shopify 默认的表单提交（因为 Shopify contact form 缺少 email 会报错）
+    // 我们改为纯 AJAX 提交
+    e.preventDefault();
+    
+    var btn = form.querySelector('button[type="submit"]');
+    var origText = btn.textContent;
+    
+    // 基础验证
+    var nameInput = form.querySelector('input[name="contact[name]"]');
+    if (nameInput && !nameInput.value.trim()) {
+      btn.textContent = '请填写姓名';
       btn.style.background = '#c53030';
       setTimeout(function() {
-        btn.textContent = orig;
+        btn.textContent = origText;
         btn.style.background = '';
       }, 2500);
       return;
     }
 
-    // 异步提交到腾讯云云函数（不影响 Shopify 表单正常提交）
+    btn.disabled = true;
+    btn.textContent = '提交中...';
+    btn.style.opacity = '0.7';
+
+    // 收集表单数据
     var formData = getFormData(form);
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://www.vibelingan.com/trialFeedback', true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          console.log('试用反馈已同步到数据库');
-        } else {
-          console.warn('试用反馈同步失败:', xhr.status, xhr.responseText);
-        }
+    
+    // 同时提交到 Shopify contact form（通过 AJAX）和云函数
+    var shopifyData = new FormData(form);
+    
+    Promise.all([
+      // 1. 提交到 Shopify contact form
+      fetch(window.location.href, {
+        method: 'POST',
+        body: shopifyData
+      }).catch(function() { /* Shopify 可能返回 422，忽略 */ }),
+      
+      // 2. 提交到腾讯云云函数
+      fetch('https://www.vibelingan.com/trialFeedback', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ body: formData })
+      }).then(function(r) { return r.json(); })
+    ]).then(function(results) {
+      var cloudResult = results[1];
+      if (cloudResult && cloudResult.code === 0) {
+        // 显示成功消息
+        var successDiv = document.createElement('div');
+        successDiv.style.cssText = 'background:#f0fff4; border:1px solid #48bb78; color:#22543d; padding:30px; border-radius:12px; text-align:center; margin-bottom:24px;';
+        successDiv.innerHTML = '<span style="font-size:48px;">🎉</span><h3 style="font-size:20px; margin:12px 0 6px;">提交成功！</h3><p style="font-size:15px; color:#555;">感谢您的宝贵反馈！</p>';
+        form.innerHTML = '';
+        form.appendChild(successDiv);
+        
+        // 滚动到顶部
+        window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+      } else {
+        btn.disabled = false;
+        btn.textContent = origText;
+        btn.style.opacity = '1';
+        alert('提交失败，请重试。错误：' + (cloudResult ? cloudResult.message : '网络错误'));
       }
-    };
-    xhr.send(JSON.stringify({ body: formData }));
+    }).catch(function(err) {
+      btn.disabled = false;
+      btn.textContent = origText;
+      btn.style.opacity = '1';
+      alert('网络错误，请稍后重试');
+    });
   });
 })();
 </script>
